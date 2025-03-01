@@ -5,7 +5,6 @@ extends AnimatedSprite2D
 #DO NOT TOUCH THIS SCRIPT UNLESS ABSOLUTELY NECESSARY!!!!
 
 @onready var player = $".."
-var flip_timer = Timer.new()
 
 enum AnimationState {
 	RUN,
@@ -18,15 +17,13 @@ var current_state: AnimationState = AnimationState.IDLE
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_child(flip_timer)
-	flip_timer.wait_time = 1
-	flip_timer.one_shot = true
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_Left") || Input.is_action_pressed("move_Right"):
 		print("Flip Check")
-		flip_check()
+		flip_check() #makes the player look left if moving left and right if moving right
 	
 	match current_state:
 		AnimationState.DASH:
@@ -97,12 +94,10 @@ func flip_check():
 	if player.velocity.x > 0 && player.scale.y < 0:
 		player.scale.x *= -1
 		print("Flipped")
-		flip_timer.start()
 		
 	elif player.velocity.x < 0 && player.scale.y > 0:
 		player.scale.x *= -1
 		print("Flipped")
-		flip_timer.start()
 
 func change_State(new_state:AnimationState):
 	if current_state == new_state:
