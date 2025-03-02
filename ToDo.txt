@@ -1,0 +1,4 @@
+Movement:
+	add a dash:
+		freeze movement on the y axis during the dash (Done)
+Level Design:

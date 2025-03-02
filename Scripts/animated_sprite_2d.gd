@@ -27,8 +27,10 @@ func _process(_delta: float) -> void:
 	
 	match current_state:
 		AnimationState.DASH:
+			player.can_jump = false
 			await animation_finished
-			if player.jump_after_dash && player.jump_charges > 0:
+			player.can_jump = true
+			if player.jump_after_dash && player.jump_charges_max > 0:
 				change_State(AnimationState.JUMP)
 			elif not player.is_on_floor() && not player.jump_after_dash:
 				change_State(AnimationState.FALL)
@@ -40,7 +42,7 @@ func _process(_delta: float) -> void:
 		AnimationState.FALL:
 			if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
 				change_State(AnimationState.DASH)
-			elif player.jump_charges > 0 && Input.is_action_pressed("jump"):
+			elif player.jump_charges_max > 0 && Input.is_action_pressed("jump"):
 				change_State(AnimationState.JUMP)
 			elif player.is_on_floor() && player.velocity.x != 0:
 				change_State(AnimationState.RUN)
@@ -50,7 +52,7 @@ func _process(_delta: float) -> void:
 		AnimationState.JUMP:
 			if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
 				change_State(AnimationState.DASH)
-			elif player.jump_charges > 0 && Input.is_action_pressed("jump"):
+			elif player.jump_charges_max > 0 && Input.is_action_pressed("jump"):
 				change_State(AnimationState.JUMP)
 			elif player.velocity.y > 0 && not player.is_on_floor():
 				change_State(AnimationState.FALL)
@@ -62,7 +64,7 @@ func _process(_delta: float) -> void:
 		AnimationState.RUN:
 			if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
 				change_State(AnimationState.DASH)
-			elif player.jump_charges > 0 && Input.is_action_pressed("jump"):
+			elif player.jump_charges_max > 0 && Input.is_action_pressed("jump"):
 				change_State(AnimationState.JUMP)
 			elif player.velocity.y > 0 && not player.is_on_floor():
 				change_State(AnimationState.FALL)
@@ -72,7 +74,7 @@ func _process(_delta: float) -> void:
 		AnimationState.IDLE:
 			if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
 				change_State(AnimationState.DASH)
-			elif player.jump_charges > 0 && Input.is_action_pressed("jump"):
+			elif player.jump_charges_max > 0 && Input.is_action_pressed("jump"):
 				change_State(AnimationState.JUMP)
 			elif player.velocity.y > 0 && not player.is_on_floor():
 				change_State(AnimationState.FALL)
@@ -106,16 +108,34 @@ func change_State(new_state:AnimationState):
 	match new_state:
 		AnimationState.DASH:
 			play("Dash")
-			print("Dash")
+			player.dashing = true
+			player.falling = false
+			player.jumping = false
+			player.running = false
 		AnimationState.FALL:
 			play("Fall")
+			player.dashing = false
+			player.falling = true
+			player.jumping = false
+			player.running = false
 			print("Fall")
 		AnimationState.JUMP:
 			play("Jump")
-			print("Jump")
+			player.dashing = false
+			player.falling = false
+			player.jumping = true
+			player.running = false
 		AnimationState.RUN:
 			play("Run")
+			player.dashing = false
+			player.falling = false
+			player.jumping = false
+			player.running = true
 			print("Run")
 		AnimationState.IDLE:
 			play("Idle")
+			player.dashing = false
+			player.falling = false
+			player.jumping = false
+			player.running = false
 			print("Idle")
