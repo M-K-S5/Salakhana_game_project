@@ -1,20 +1,24 @@
 extends CharacterBody2D
 
+@export_category("Movement")
 @export var move_speed = 2500.0
 @export var acceleration = 450.0
 @export var floor_friction:float = 1
 
+@export_category("Jump")
 @export var jump_charges_max:int = 2
+@onready var jump_charges = jump_charges_max
+@onready var jump_velocity = ((2 * jump_height) / jump_time_to_peak) * -1
 @export var jump_height:float = 300
 @export var jump_time_to_peak:float = 0.5
 @export var jump_time_to_descend:float = 0.25
 
+@export_category("Dash")
 @export var dash_force:float = 200
 
-@onready var jump_velocity = ((2 * jump_height) / jump_time_to_peak) * -1
+@export_category("Gravity")
 @onready var jump_gravity = ((-2 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1
 @onready var fall_gravity = ((-2 * jump_height) / (jump_time_to_descend * jump_time_to_descend)) * -1
-@onready var jump_charges = jump_charges_max
 
 @onready var friction_coeff:float = acceleration / move_speed
 @onready var external_force:float = 0

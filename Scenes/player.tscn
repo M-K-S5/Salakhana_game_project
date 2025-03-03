@@ -1,13 +1,13 @@
 [gd_scene load_steps=41 format=3 uid="uid://fvipmtgkk5me"]
 
 [ext_resource type="Texture2D" uid="uid://d4my3x2eybjyw" path="res://Assets/Placeholders/Player/Dash.png" id="1_kj0ft"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_r2d6d"]
+[ext_resource type="Script" uid="uid://cppijqdvvh6et" path="res://Scripts/player.gd" id="1_r2d6d"]
 [ext_resource type="Texture2D" uid="uid://wpqy5ptmjggx" path="res://Assets/Placeholders/Player/Fall.png" id="2_jytpd"]
 [ext_resource type="Texture2D" uid="uid://c0eh2m88xe2wj" path="res://Assets/Placeholders/Player/Idle.png" id="3_u284m"]
 [ext_resource type="Texture2D" uid="uid://c7y3krbov1i8o" path="res://Assets/Placeholders/Player/Jump.png" id="4_cx2ag"]
 [ext_resource type="Texture2D" uid="uid://chf85d03h6f8a" path="res://Assets/Placeholders/Player/Grappling Hook.png" id="4_o3fxm"]
 [ext_resource type="Texture2D" uid="uid://dug8el5agy2s1" path="res://Assets/Placeholders/Player/Run.png" id="5_fxfv8"]
-[ext_resource type="Script" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
+[ext_resource type="Script" uid="uid://bbxq8qi7h6jhm" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1sx1"]
 atlas = ExtResource("1_kj0ft")
@@ -257,6 +257,8 @@ size = Vector2(250, 353)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_r2d6d")
+acceleration = 200.0
+floor_friction = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vw3cs")
