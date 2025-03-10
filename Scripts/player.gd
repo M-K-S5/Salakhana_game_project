@@ -66,7 +66,7 @@ func dash():
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	friction = velocity.abs().x * friction_coeff * floor_friction + 1
+	friction = velocity.abs().x * friction_coeff * floor_friction + 8
 	if not is_on_floor():
 		get_var_gravity()
 		velocity.y += gravity * delta

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7y3krbov1i8o" path="res://Assets/Placeholders/Player/Jump.png" id="4_cx2ag"]
 [ext_resource type="Texture2D" uid="uid://chf85d03h6f8a" path="res://Assets/Placeholders/Player/Grappling Hook.png" id="4_o3fxm"]
 [ext_resource type="Texture2D" uid="uid://dug8el5agy2s1" path="res://Assets/Placeholders/Player/Run.png" id="5_fxfv8"]
-[ext_resource type="Script" uid="uid://bbxq8qi7h6jhm" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
+[ext_resource type="Script" uid="uid://cphla3uoytdqt" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1sx1"]
 atlas = ExtResource("1_kj0ft")

@@ -8,11 +8,23 @@
 [node name="Main_scene" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_2qniy")]
-jump_height = 500.0
-jump_time_to_descend = 0.2
+acceleration = 300.0
+floor_friction = 0.75
+jump_height = 450.0
+jump_time_to_descend = 0.225
+dash_force = 250.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.3, 0.3)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 1.0
+drag_vertical_offset = -1.0
+drag_left_margin = 0.55
+drag_right_margin = 0.15
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Ground" type="AnimatableBody2D" parent="."]
 position = Vector2(0, 180)
