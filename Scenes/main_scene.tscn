@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=5 format=3 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
 [ext_resource type="Texture2D" uid="uid://dmrw1lvd4cerl" path="res://Assets/Placeholders/icon.svg" id="2_mgkiw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ou7uo"]
 
@@ -28,6 +30,7 @@ editor_draw_drag_margin = true
 
 [node name="Ground" type="AnimatableBody2D" parent="."]
 position = Vector2(0, 180)
+physics_material_override = SubResource("PhysicsMaterial_6l7je")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape2D_ou7uo")

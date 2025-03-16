@@ -6,6 +6,8 @@ extends AnimatedSprite2D
 
 @onready var player = $".."
 
+var flip_counter = 0
+
 enum AnimationState {
 	RUN,
 	JUMP,
@@ -21,8 +23,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("move_Left") || Input.is_action_pressed("move_Right"):
-		print("Flip Check")
+	flip_counter += 1
+	if flip_counter == 2:
+		flip_counter = 0
 		flip_check() #makes the player look left if moving left and right if moving right
 	
 	match current_state:
@@ -40,7 +43,8 @@ func _process(_delta: float) -> void:
 				change_State(AnimationState.IDLE)
 		
 		AnimationState.FALL:
-			if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
+			#if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
+			if player.dashing:
 				change_State(AnimationState.DASH)
 			elif player.jump_charges_max > 0 && Input.is_action_pressed("jump"):
 				change_State(AnimationState.JUMP)
@@ -72,7 +76,8 @@ func _process(_delta: float) -> void:
 				change_State(AnimationState.IDLE)
 			
 		AnimationState.IDLE:
-			if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
+			#if not player.dash_on_cooldown && Input.is_action_pressed("dash"):
+			if player.dashing:
 				change_State(AnimationState.DASH)
 			elif player.jump_charges_max > 0 && Input.is_action_pressed("jump"):
 				change_State(AnimationState.JUMP)

@@ -16,7 +16,6 @@ extends CharacterBody2D
 @export_category("Dash")
 @export var dash_force:float = 200
 
-@export_category("Gravity")
 @onready var jump_gravity = ((-2 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1
 @onready var fall_gravity = ((-2 * jump_height) / (jump_time_to_descend * jump_time_to_descend)) * -1
 
@@ -27,7 +26,7 @@ var direction := Input.get_axis("move_Left", "move_Right")
 
 var gravity:float
 var friction:float
-var running_speed:float
+var running_speed:float = 0.0
 var dash_speed:float = 0.0
 
 var dashing:bool = false
@@ -52,21 +51,24 @@ func get_var_gravity():
 func jump():
 	velocity.y = jump_velocity
 	if not is_on_floor():
-		jump_charges = jump_charges -1
+		jump_charges -= 1
 		print("Mid-Air Jump")
 	else:
 		print("Jump")
+	print(jump_charges, " Jump charges left")
 
 func dash():
 	print("Dash")
+	dashing = true
 	velocity.y = 0
 	dash_speed = (dash_force * scale.y * 10)
 	await $AnimatedSprite2D.animation_finished
 	dash_speed = 0
+	dashing = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	friction = velocity.abs().x * friction_coeff * floor_friction + 8
+	friction = running_speed * friction_coeff * floor_friction
 	if not is_on_floor():
 		get_var_gravity()
 		velocity.y += gravity * delta
@@ -75,7 +77,10 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if is_on_floor() || jump_charges > 0:
-		can_jump = true
+		if not dashing:
+			can_jump = true
+		else:
+			can_jump = false
 	else:
 		can_jump = false
 	
@@ -89,10 +94,10 @@ func _physics_process(delta: float) -> void:
 		jump()
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("move_Left", "move_Right")
-	running_speed = move_toward(running_speed,0,friction)
-	running_speed += direction * acceleration
+	running_speed += direction * acceleration - friction
+	if abs(running_speed) < 50:
+		running_speed = 0
 	velocity.x = running_speed + dash_speed + external_force
 	
 	if direction:
