@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=6 format=3 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
+[ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="2_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://dmrw1lvd4cerl" path="res://Assets/Placeholders/icon.svg" id="2_mgkiw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
@@ -26,6 +27,12 @@ drag_left_margin = 0.55
 drag_right_margin = 0.15
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
+
+[node name="cards" parent="player/Camera2D/CanvasLayer" instance=ExtResource("2_jv6wh")]
+position = Vector2(569, 548)
+scale = Vector2(0.5, 0.5)
 
 [node name="Ground" type="AnimatableBody2D" parent="."]
 position = Vector2(0, 180)
