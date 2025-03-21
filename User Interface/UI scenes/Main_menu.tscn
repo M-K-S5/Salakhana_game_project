@@ -1,7 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://w4qwrb46a464"]
+[gd_scene load_steps=14 format=3 uid="uid://w4qwrb46a464"]
 
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="1_5xemq"]
+[ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_ghc4h"]
 [ext_resource type="Texture2D" uid="uid://bmww7h4v7fuvx" path="res://User Interface/UI resources/logo.png" id="2_drr11"]
+[ext_resource type="StyleBox" uid="uid://cf66h56dqusbd" path="res://User Interface/UI resources/Button thingy.tres" id="3_t0bqg"]
+[ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="4_fgoo8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i14ap"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6cr4"]
+content_margin_bottom = 14.0
+bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+border_width_left = 30
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+expand_margin_top = 15.0
+expand_margin_right = 30.0
+shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
+shadow_size = 10
+shadow_offset = Vector2(2.655, 3.75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh76u"]
+content_margin_right = 29.0
+content_margin_bottom = 14.0
+bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+border_width_left = 5
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+expand_margin_top = 15.0
+shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
+shadow_size = 10
+shadow_offset = Vector2(2.655, 3.75)
+
+[sub_resource type="Theme" id="Theme_v0tph"]
+default_font_size = 0
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/font_sizes/font_size = 34
+Button/fonts/font = ExtResource("4_fgoo8")
+Button/styles/focus = SubResource("StyleBoxFlat_i14ap")
+Button/styles/hover = SubResource("StyleBoxFlat_p6cr4")
+Button/styles/normal = ExtResource("3_t0bqg")
+Button/styles/pressed = SubResource("StyleBoxFlat_wh76u")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj7ml"]
+bg_color = Color(0.967159, 0.391414, 0.220414, 1)
+border_width_left = 20
+border_color = Color(0.282353, 0.113725, 0.113725, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
+shadow_size = 15
+shadow_offset = Vector2(2.655, 3.75)
+
+[sub_resource type="Theme" id="Theme_sa3t8"]
+Label/styles/normal = SubResource("StyleBoxFlat_hj7ml")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sr8gh"]
+font = ExtResource("4_fgoo8")
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_si8rs"]
+font = ExtResource("4_fgoo8")
+font_size = 42
+font_color = Color(0.301961, 0.113725, 0.113725, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,14 +90,140 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.14902, 0.113725, 0.113725, 1)
+
+[node name="SckechyBackGround" type="Sprite2D" parent="ColorRect"]
+visible = false
+position = Vector2(580, 323)
+scale = Vector2(1.91383, 1.91383)
+texture = ExtResource("1_ghc4h")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(577, 322)
 texture = ExtResource("1_5xemq")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.332
+anchor_right = 0.357
+anchor_bottom = 0.711
+offset_left = 149.504
+offset_top = 10.864
+offset_right = 148.736
+offset_bottom = 11.272
+rotation = 0.785397
+scale = Vector2(0.825441, 0.825441)
+color = Color(0.301961, 0.113725, 0.113725, 1)
+
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(312, 296)
+position = Vector2(336, 336)
 texture = ExtResource("2_drr11")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.332
+anchor_right = 0.357
+anchor_bottom = 0.711
+offset_left = 151.504
+offset_top = 50.864
+offset_right = 150.736
+offset_bottom = 51.272
+rotation = 0.785397
+scale = Vector2(0.566455, 0.566455)
+color = Color(0.879578, 0.401486, 0, 0.396078)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 40.0
+offset_right = 24.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.309
+anchor_right = 0.708
+anchor_bottom = 0.407
+offset_left = 0.511963
+offset_top = -0.23201
+offset_right = 0.383972
+offset_bottom = 0.264008
+theme = SubResource("Theme_v0tph")
+text = "Play"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.469
+anchor_right = 0.64
+anchor_bottom = 0.568
+offset_left = 0.511963
+offset_top = 0.0879822
+offset_right = -0.280029
+offset_bottom = -0.0640259
+theme = SubResource("Theme_v0tph")
+text = "Settings"
+alignment = 2
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.63
+anchor_right = 0.641
+anchor_bottom = 0.733
+offset_left = -0.488037
+offset_top = -0.240021
+offset_right = -0.432007
+offset_bottom = 0.0159607
+theme = SubResource("Theme_v0tph")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 344.0
+offset_right = 987.0
+offset_bottom = 515.0
+scale = Vector2(0.992857, 1)
+theme = SubResource("Theme_sa3t8")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 0.584074, 0.212966, 1)
+text = "By :
+	OSC team
+"
+label_settings = SubResource("LabelSettings_sr8gh")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 120.0
+offset_right = 24.0
+offset_bottom = 195.0
+grow_horizontal = 2
+scale = Vector2(1.95868, 2.2071)
+text = "Game    Card"
+label_settings = SubResource("LabelSettings_si8rs")

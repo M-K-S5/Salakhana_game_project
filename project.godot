@@ -14,3 +14,7 @@ config/name="Salakhana's game"
 run/main_scene="res://User Interface/UI scenes/Main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
