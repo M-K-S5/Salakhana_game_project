@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://w4qwrb46a464"]
+
+[ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="1_5xemq"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.113725, 0.113725, 1)
+
+[node name="Background" type="Sprite2D" parent="ColorRect"]
+position = Vector2(577, 322)
+texture = ExtResource("1_5xemq")
