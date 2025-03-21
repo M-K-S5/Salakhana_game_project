@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://w4qwrb46a464"]
+[gd_scene load_steps=3 format=3 uid="uid://w4qwrb46a464"]
 
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="1_5xemq"]
+[ext_resource type="Texture2D" uid="uid://bmww7h4v7fuvx" path="res://User Interface/UI resources/logo.png" id="2_drr11"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +20,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.14902, 0.113725, 0.113725, 1)
 
-[node name="Background" type="Sprite2D" parent="ColorRect"]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(577, 322)
 texture = ExtResource("1_5xemq")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(312, 296)
+texture = ExtResource("2_drr11")
