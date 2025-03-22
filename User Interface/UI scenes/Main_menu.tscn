@@ -1,15 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://w4qwrb46a464"]
+[gd_scene load_steps=16 format=3 uid="uid://w4qwrb46a464"]
 
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="1_5xemq"]
 [ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_ghc4h"]
+[ext_resource type="Script" path="res://User Interface/UI scenes/main_menu.gd" id="1_ivkge"]
 [ext_resource type="Texture2D" uid="uid://bmww7h4v7fuvx" path="res://User Interface/UI resources/logo.png" id="2_drr11"]
 [ext_resource type="StyleBox" uid="uid://cf66h56dqusbd" path="res://User Interface/UI resources/Button thingy.tres" id="3_t0bqg"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="4_fgoo8"]
+[ext_resource type="Texture2D" uid="uid://bw2hqn6jbkt5v" path="res://User Interface/UI resources/fae7ccc262429528552d199e9225bc8a.jpg" id="6_tixui"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i14ap"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh5xn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6cr4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jsn2"]
 content_margin_bottom = 14.0
 bg_color = Color(0.282353, 0.113725, 0.113725, 1)
 border_width_left = 30
@@ -26,7 +28,7 @@ shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
 shadow_size = 10
 shadow_offset = Vector2(2.655, 3.75)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh76u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knf5y"]
 content_margin_right = 29.0
 content_margin_bottom = 14.0
 bg_color = Color(0.282353, 0.113725, 0.113725, 1)
@@ -48,12 +50,12 @@ default_font_size = 0
 Button/colors/icon_normal_color = Color(1, 1, 1, 0)
 Button/font_sizes/font_size = 34
 Button/fonts/font = ExtResource("4_fgoo8")
-Button/styles/focus = SubResource("StyleBoxFlat_i14ap")
-Button/styles/hover = SubResource("StyleBoxFlat_p6cr4")
+Button/styles/focus = SubResource("StyleBoxFlat_fh5xn")
+Button/styles/hover = SubResource("StyleBoxFlat_2jsn2")
 Button/styles/normal = ExtResource("3_t0bqg")
-Button/styles/pressed = SubResource("StyleBoxFlat_wh76u")
+Button/styles/pressed = SubResource("StyleBoxFlat_knf5y")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj7ml"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfl5d"]
 bg_color = Color(0.967159, 0.391414, 0.220414, 1)
 border_width_left = 20
 border_color = Color(0.282353, 0.113725, 0.113725, 1)
@@ -66,7 +68,7 @@ shadow_size = 15
 shadow_offset = Vector2(2.655, 3.75)
 
 [sub_resource type="Theme" id="Theme_sa3t8"]
-Label/styles/normal = SubResource("StyleBoxFlat_hj7ml")
+Label/styles/normal = SubResource("StyleBoxFlat_dfl5d")
 
 [sub_resource type="LabelSettings" id="LabelSettings_sr8gh"]
 font = ExtResource("4_fgoo8")
@@ -82,8 +84,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 16.0
+offset_right = -2.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ivkge")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -109,6 +116,7 @@ position = Vector2(577, 322)
 texture = ExtResource("1_5xemq")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.148
@@ -124,10 +132,12 @@ scale = Vector2(0.825441, 0.825441)
 color = Color(0.301961, 0.113725, 0.113725, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(336, 336)
 texture = ExtResource("2_drr11")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.148
@@ -154,46 +164,46 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control"]
+[node name="playButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.444
 anchor_top = 0.309
 anchor_right = 0.708
 anchor_bottom = 0.407
-offset_left = 0.511963
-offset_top = -0.23201
-offset_right = 0.383972
+offset_left = -36.488
+offset_top = -0.231995
+offset_right = -36.616
 offset_bottom = 0.264008
 theme = SubResource("Theme_v0tph")
 text = "Play"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="settingsButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.444
 anchor_top = 0.469
 anchor_right = 0.64
 anchor_bottom = 0.568
-offset_left = 0.511963
+offset_left = -36.488
 offset_top = 0.0879822
-offset_right = -0.280029
+offset_right = -37.28
 offset_bottom = -0.0640259
 theme = SubResource("Theme_v0tph")
 text = "Settings"
 alignment = 2
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="Exit" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.444
 anchor_top = 0.63
 anchor_right = 0.641
 anchor_bottom = 0.733
-offset_left = -0.488037
-offset_top = -0.240021
-offset_right = -0.432007
-offset_bottom = 0.0159607
+offset_left = -37.488
+offset_top = -0.23999
+offset_right = -37.432
+offset_bottom = 0.0159912
 theme = SubResource("Theme_v0tph")
 text = "Exit"
 
@@ -227,3 +237,12 @@ grow_horizontal = 2
 scale = Vector2(1.95868, 2.2071)
 text = "Game    Card"
 label_settings = SubResource("LabelSettings_si8rs")
+
+[node name="Ace" type="Sprite2D" parent="."]
+position = Vector2(327, 375)
+scale = Vector2(0.307959, 0.307959)
+texture = ExtResource("6_tixui")
+
+[connection signal="pressed" from="Control/playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
