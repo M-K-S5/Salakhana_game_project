@@ -12,5 +12,5 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 expand_margin_right = 30.0
 shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
-shadow_size = 10
+shadow_size = 3
 shadow_offset = Vector2(2.655, 3.75)

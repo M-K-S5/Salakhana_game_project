@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://1aol0y2iqmpn"]
+[gd_scene load_steps=24 format=3 uid="uid://1aol0y2iqmpn"]
 
 [ext_resource type="Script" path="res://User Interface/UI scenes/settings_menu.gd" id="1_6skcr"]
 [ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_j2wop"]
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="2_cacl6"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="3_jn0lj"]
 [ext_resource type="StyleBox" uid="uid://cf66h56dqusbd" path="res://User Interface/UI resources/Button thingy.tres" id="5_gtyg6"]
+[ext_resource type="AudioStream" uid="uid://d0hvcnlvmiwmv" path="res://User Interface/UI resources/videoplayback (13).mp3" id="6_5rv2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj7ml"]
 bg_color = Color(0.967159, 0.391414, 0.220414, 1)
@@ -29,6 +30,51 @@ font_size = 31
 font = ExtResource("3_jn0lj")
 font_size = 42
 font_color = Color(0.301961, 0.113725, 0.113725, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_465lx"]
+bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssvce"]
+bg_color = Color(0.430874, 0.189964, 0.189693, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_cbtc4"]
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_465lx")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ssvce")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1ckr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2w7t"]
+bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+border_width_left = 15
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.105882, 0.0862745, 0.0705882, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.891172, 0.535061, 7.70092e-07, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(2, 1.655)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjuho"]
+
+[sub_resource type="Theme" id="Theme_xeib7"]
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_a1ckr")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_h2w7t")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_h2w7t")
+CheckBox/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jjuho")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_h2w7t")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_h2w7t")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i14ap"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -62,9 +108,8 @@ border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
-expand_margin_top = 15.0
 shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
-shadow_size = 10
+shadow_size = 3
 shadow_offset = Vector2(2.655, 3.75)
 
 [sub_resource type="Theme" id="Theme_2i1d2"]
@@ -76,6 +121,15 @@ Button/styles/focus = SubResource("StyleBoxFlat_i14ap")
 Button/styles/hover = SubResource("StyleBoxFlat_p6cr4")
 Button/styles/normal = ExtResource("5_gtyg6")
 Button/styles/pressed = SubResource("StyleBoxFlat_wh76u")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnmbf"]
+
+[sub_resource type="Theme" id="Theme_jv8cs"]
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_dnmbf")
+OptionButton/styles/hover = ExtResource("5_gtyg6")
+OptionButton/styles/hover_pressed = ExtResource("5_gtyg6")
+OptionButton/styles/normal = ExtResource("5_gtyg6")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_wh76u")
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -109,7 +163,13 @@ texture = ExtResource("1_j2wop")
 position = Vector2(577, 322)
 texture = ExtResource("2_cacl6")
 
-[node name="Label" type="Label" parent="."]
+[node name="byOSC" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00520833
+anchor_top = -0.0108025
+anchor_right = 0.00520833
+anchor_bottom = -0.0108025
 offset_left = 906.0
 offset_top = 87.0
 offset_right = 1070.0
@@ -125,20 +185,98 @@ label_settings = SubResource("LabelSettings_qq11x")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="."]
+[node name="Settings" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0659722
-anchor_top = 0.108025
-anchor_right = 0.453628
-anchor_bottom = 0.363476
-offset_right = -218.579
-offset_bottom = -90.5325
+anchor_left = 0.0694444
+anchor_top = 0.123457
+anchor_right = 0.4571
+anchor_bottom = 0.378908
+offset_right = 171.494
+offset_bottom = 24.782
 scale = Vector2(1.95868, 2.2071)
 text = "Settings"
 label_settings = SubResource("LabelSettings_ye6fe")
 metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 136.0
+offset_top = 144.0
+offset_right = 176.0
+offset_bottom = 184.0
+scale = Vector2(12.3078, 11.5804)
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.111111
+anchor_right = 0.450155
+anchor_bottom = 0.366562
+offset_right = 171.494
+offset_bottom = 24.782
+scale = Vector2(0.0815221, 0.0918616)
+text = "Mute"
+label_settings = SubResource("LabelSettings_ye6fe")
+metadata/_edit_use_anchors_ = true
+
+[node name="volume" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0649992
+anchor_top = 0.276329
+anchor_right = 0.452655
+anchor_bottom = 0.53178
+offset_right = 171.494
+offset_bottom = 24.782
+scale = Vector2(0.0815221, 0.0918616)
+text = "Volume"
+label_settings = SubResource("LabelSettings_ye6fe")
+metadata/_edit_use_anchors_ = true
+
+[node name="mute2" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0649992
+anchor_top = 0.483576
+anchor_right = 1.75265
+anchor_bottom = 0.739027
+offset_right = 171.494
+offset_bottom = 24.782
+scale = Vector2(0.0815221, 0.0918616)
+text = "Resolution"
+label_settings = SubResource("LabelSettings_ye6fe")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 208.0
+offset_right = 400.0
+offset_bottom = 248.0
+rotation = -0.00243826
+scale = Vector2(4.08121, 4.08308)
+alignment = 1
+
+[node name="v Slider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_cbtc4")
+min_value = -72.0
+max_value = 0.0
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 184.0
+offset_right = 368.0
+offset_bottom = 208.0
+scale = Vector2(2.11524, 1.97422)
+theme = SubResource("Theme_xeib7")
 
 [node name="back" type="Button" parent="."]
 layout_mode = 1
@@ -147,12 +285,35 @@ anchor_left = 0.444
 anchor_top = 0.63
 anchor_right = 0.641
 anchor_bottom = 0.733
-offset_left = -422.488
-offset_top = 101.76
-offset_right = -422.432
-offset_bottom = 102.016
-scale = Vector2(0.8, 1.00847)
+offset_left = -431.488
+offset_top = 111.76
+offset_right = -324.368
+offset_bottom = 144.64
+scale = Vector2(0.703323, 0.608136)
 theme = SubResource("Theme_2i1d2")
 text = "Back"
 
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 360.0
+offset_right = 474.0
+offset_bottom = 390.0
+scale = Vector2(1.61464, 1.77687)
+theme = SubResource("Theme_jv8cs")
+item_count = 3
+popup/item_0/text = "1152*648"
+popup/item_1/text = "1600*900"
+popup/item_1/id = 1
+popup/item_2/text = "1920*1080"
+popup/item_2/id = 2
+
+[node name="Videoplayback(13)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5rv2q")
+autoplay = true
+parameters/looping = false
+
+[connection signal="value_changed" from="VBoxContainer/v Slider" to="." method="_on_v_slider_value_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
