@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var health_bar: TextureProgressBar = $"Camera2D/CanvasLayer/health bar"
+@onready var charge: TextureProgressBar = $Camera2D/CanvasLayer/charge
+
 @export_category("Movement")
 @export var move_speed = 2500.0
 @export var acceleration = 450.0
@@ -35,9 +38,11 @@ var dashing:bool = false
 var falling:bool = false
 var jumping:bool = false
 var running:bool = false
+var dead:bool = false # add as condition for input detection
 
 var can_dash:bool = false
 var can_jump:bool = false
+var have_charge:bool = true # if false can't dash nor double jump
 
 var jump_after_dash:bool = false
 var dash_on_cooldown:bool = false
@@ -88,6 +93,10 @@ func _physics_process(delta: float) -> void:
 	
 	if not dash_on_cooldown:
 		can_dash = true
+	
+	# handling health & charges
+	health_bar.take_damage()
+	charge.use_charge()
 	
 	if Input.is_action_just_pressed("dash") && can_dash:
 		dash()
