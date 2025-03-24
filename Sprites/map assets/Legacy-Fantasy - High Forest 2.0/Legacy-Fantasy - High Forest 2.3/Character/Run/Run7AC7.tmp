@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dstdi6dg7jc5o"
-path="res://.godot/imported/Jump-End-Sheet.png-100cc201920bd86e2cb2f6b817e1cff3.ctex"
+uid="uid://dbv7321oo2tr3"
+path="res://.godot/imported/Run-Sheet.png-edef5501f61c66a836bd3667a319cc3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/map assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Character/Jump-End/Jump-End-Sheet.png"
-dest_files=["res://.godot/imported/Jump-End-Sheet.png-100cc201920bd86e2cb2f6b817e1cff3.ctex"]
+source_file="res://Sprites/map assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Character/Run/Run-Sheet.png"
+dest_files=["res://.godot/imported/Run-Sheet.png-edef5501f61c66a836bd3667a319cc3c.ctex"]
 
 [params]
 
