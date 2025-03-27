@@ -1,0 +1,260 @@
+[gd_scene load_steps=16 format=3 uid="uid://w4qwrb46a464"]
+
+[ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="1_5xemq"]
+[ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_ghc4h"]
+[ext_resource type="Script" path="res://User Interface/UI scenes/main_menu.gd" id="1_ivkge"]
+[ext_resource type="Texture2D" uid="uid://bmww7h4v7fuvx" path="res://User Interface/UI resources/logo.png" id="2_drr11"]
+[ext_resource type="StyleBox" uid="uid://cf66h56dqusbd" path="res://User Interface/UI resources/Button thingy.tres" id="3_t0bqg"]
+[ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="4_fgoo8"]
+[ext_resource type="Texture2D" uid="uid://bw2hqn6jbkt5v" path="res://User Interface/UI resources/fae7ccc262429528552d199e9225bc8a.jpg" id="6_tixui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh5xn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jsn2"]
+content_margin_bottom = 14.0
+bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+border_width_left = 30
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_detail = 1
+expand_margin_top = 15.0
+expand_margin_right = 30.0
+shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
+shadow_size = 10
+shadow_offset = Vector2(2.655, 3.75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knf5y"]
+content_margin_right = 29.0
+content_margin_bottom = 14.0
+bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+border_width_left = 5
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_detail = 1
+expand_margin_top = 15.0
+shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
+shadow_size = 10
+shadow_offset = Vector2(2.655, 3.75)
+
+[sub_resource type="Theme" id="Theme_v0tph"]
+default_font_size = 0
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/font_sizes/font_size = 34
+Button/fonts/font = ExtResource("4_fgoo8")
+Button/styles/focus = SubResource("StyleBoxFlat_fh5xn")
+Button/styles/hover = SubResource("StyleBoxFlat_2jsn2")
+Button/styles/normal = ExtResource("3_t0bqg")
+Button/styles/pressed = SubResource("StyleBoxFlat_knf5y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfl5d"]
+bg_color = Color(0.967159, 0.391414, 0.220414, 1)
+border_width_left = 20
+border_color = Color(0.282353, 0.113725, 0.113725, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+corner_detail = 1
+shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
+shadow_size = 15
+shadow_offset = Vector2(2.655, 3.75)
+
+[sub_resource type="Theme" id="Theme_sa3t8"]
+Label/styles/normal = SubResource("StyleBoxFlat_dfl5d")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sr8gh"]
+font = ExtResource("4_fgoo8")
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_si8rs"]
+font = ExtResource("4_fgoo8")
+font_size = 42
+font_color = Color(0.301961, 0.113725, 0.113725, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 16.0
+offset_right = -2.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ivkge")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.025
+anchor_right = 1.0
+anchor_bottom = 0.975
+offset_top = 0.200001
+offset_bottom = 0.200012
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.113725, 0.113725, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SckechyBackGround" type="Sprite2D" parent="ColorRect"]
+visible = false
+position = Vector2(580, 323)
+scale = Vector2(1.91383, 1.91383)
+texture = ExtResource("1_ghc4h")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577, 309)
+texture = ExtResource("1_5xemq")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.332
+anchor_right = 0.357
+anchor_bottom = 0.711
+offset_left = 149.504
+offset_top = 10.864
+offset_right = 148.736
+offset_bottom = 11.272
+rotation = 0.785397
+scale = Vector2(0.825441, 0.825441)
+color = Color(0.301961, 0.113725, 0.113725, 1)
+
+[node name="Logo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(336, 336)
+texture = ExtResource("2_drr11")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.332
+anchor_right = 0.357
+anchor_bottom = 0.711
+offset_left = 151.504
+offset_top = 50.864
+offset_right = 150.736
+offset_bottom = 51.272
+rotation = 0.785397
+scale = Vector2(0.566455, 0.566455)
+color = Color(0.879578, 0.401486, 0, 0.396078)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = -0.016
+anchor_top = 0.066
+anchor_right = 0.984
+anchor_bottom = 1.066
+offset_left = 0.432001
+offset_top = -12.768
+offset_right = 0.432007
+offset_bottom = -12.7681
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.309
+anchor_right = 0.676
+anchor_bottom = 0.407
+offset_left = 0.375977
+offset_top = -0.23201
+offset_right = 0.247925
+offset_bottom = 0.264008
+theme = SubResource("Theme_v0tph")
+text = "Play"
+
+[node name="settingsButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.469
+anchor_right = 0.608
+anchor_bottom = 0.568
+offset_left = 0.375977
+offset_top = 0.0879822
+offset_right = -0.416016
+offset_bottom = -0.0640259
+theme = SubResource("Theme_v0tph")
+text = "Settings"
+alignment = 2
+
+[node name="Exit" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.411
+anchor_top = 0.63
+anchor_right = 0.609
+anchor_bottom = 0.733
+offset_left = 0.527985
+offset_top = -0.240021
+offset_right = -0.568115
+offset_bottom = 0.0159912
+theme = SubResource("Theme_v0tph")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.678
+anchor_top = 0.535
+anchor_right = 0.819
+anchor_bottom = 0.799
+offset_left = -0.0560303
+offset_top = -12.68
+offset_right = 1.5119
+offset_bottom = -12.752
+scale = Vector2(0.992857, 1)
+theme = SubResource("Theme_sa3t8")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 0.584074, 0.212966, 1)
+text = "By :
+	OSC team
+"
+label_settings = SubResource("LabelSettings_sr8gh")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.181
+anchor_right = 0.699
+anchor_bottom = 0.436
+offset_left = -0.424011
+offset_top = -13.288
+offset_right = -218.248
+offset_bottom = -103.528
+grow_horizontal = 2
+scale = Vector2(1.95868, 2.2071)
+text = "Game    Card"
+label_settings = SubResource("LabelSettings_si8rs")
+
+[node name="Ace" type="Sprite2D" parent="."]
+position = Vector2(285, 365)
+scale = Vector2(0.307959, 0.307959)
+texture = ExtResource("6_tixui")
+
+[connection signal="pressed" from="Control/playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

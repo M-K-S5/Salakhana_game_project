@@ -221,8 +221,9 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqf0k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ntgo"]
 size = Vector2(250, 353)
+
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_r2d6d")
@@ -237,4 +238,4 @@ autoplay = "Idle"
 script = ExtResource("7_oh5p7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_pqf0k")
+shape = SubResource("RectangleShape2D_5ntgo")
