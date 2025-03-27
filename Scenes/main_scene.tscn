@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=12 format=3 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
 [ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="2_jv6wh"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="3_x6ack"]
 [ext_resource type="Script" uid="uid://opoxanq5yueo" path="res://Scripts/health_bar.gd" id="4_iacmt"]
 [ext_resource type="Script" uid="uid://bytg8s45pkp8q" path="res://Scripts/charge.gd" id="4_maf8m"]
+[ext_resource type="Script" uid="uid://rfcay2hwr7k" path="res://Scripts/score.gd" id="7_m1efj"]
+[ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="8_huasi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
 
@@ -54,6 +56,12 @@ offset_bottom = 746.0
 script = ExtResource("4_iacmt")
 current_health = 3
 
+[node name="score" type="Label" parent="player/Camera2D/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "score: 0"
+script = ExtResource("7_m1efj")
+
 [node name="Ground" type="AnimatableBody2D" parent="."]
 position = Vector2(0, 180)
 physics_material_override = SubResource("PhysicsMaterial_6l7je")
@@ -64,3 +72,9 @@ shape = SubResource("WorldBoundaryShape2D_ou7uo")
 [node name="Position Reference" type="Sprite2D" parent="."]
 position = Vector2(300, 0)
 texture = ExtResource("2_mgkiw")
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("8_huasi")]
+z_index = -1
+position = Vector2(555, 16)
