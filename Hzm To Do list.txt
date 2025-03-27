@@ -1,0 +1,26 @@
+Hzm to do list:
+	Ui assits:
+		stamina par full ✅
+		stamina par not full ✅
+		health par full ✅
+		health par not full ✅
+
+		health and stamina caps ✅
+
+		dash card caps ✅
+		dash card full ✅
+		dash card not full ✅ 
+
+		heal card caps ✅ 
+		heal card full ✅ 
+		heal card not full ✅ 
+
+		1 useless empty caps ✅   
+		1 useless empty ✅ 
+		1 useless full ✅ 
+
+		2 useless empty caps ✅
+		2 useless empty ✅
+		2 useless full ✅
+
+		menu icon ✅

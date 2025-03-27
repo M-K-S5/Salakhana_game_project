@@ -18787,8 +18787,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_chwn1"]
 _data = {
-&"RESET": SubResource("Animation_v7gqg"),
-&"move": SubResource("Animation_wjtap")
+"RESET": SubResource("Animation_v7gqg"),
+"move": SubResource("Animation_wjtap")
 }
 
 [sub_resource type="Animation" id="Animation_2ooml"]
@@ -18824,8 +18824,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p20hg"]
 _data = {
-&"RESET": SubResource("Animation_2ooml"),
-&"move": SubResource("Animation_hvaui")
+"RESET": SubResource("Animation_2ooml"),
+"move": SubResource("Animation_hvaui")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
@@ -18864,8 +18864,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie368"]
 _data = {
-&"RESET": SubResource("Animation_5qtum"),
-&"trap": SubResource("Animation_q6lx1")
+"RESET": SubResource("Animation_5qtum"),
+"trap": SubResource("Animation_q6lx1")
 }
 
 [sub_resource type="Animation" id="Animation_fls3e"]
@@ -18901,8 +18901,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63oc"]
 _data = {
-&"RESET": SubResource("Animation_fls3e"),
-&"trap": SubResource("Animation_x5dfk")
+"RESET": SubResource("Animation_fls3e"),
+"trap": SubResource("Animation_x5dfk")
 }
 
 [node name="map" type="Node2D"]
@@ -18938,7 +18938,7 @@ position = Vector2(683, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moving platforms"]
 libraries = {
-&"": SubResource("AnimationLibrary_chwn1")
+"": SubResource("AnimationLibrary_chwn1")
 }
 autoplay = "move"
 
@@ -18947,7 +18947,7 @@ position = Vector2(823, -145)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moving platforms2"]
 libraries = {
-&"": SubResource("AnimationLibrary_p20hg")
+"": SubResource("AnimationLibrary_p20hg")
 }
 autoplay = "move"
 
@@ -18969,7 +18969,7 @@ scale = Vector2(1.62091, 1.56347)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fence"]
 libraries = {
-&"": SubResource("AnimationLibrary_ie368")
+"": SubResource("AnimationLibrary_ie368")
 }
 autoplay = "trap"
 
@@ -18979,6 +18979,6 @@ scale = Vector2(1.36648, 1.28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fence2"]
 libraries = {
-&"": SubResource("AnimationLibrary_k63oc")
+"": SubResource("AnimationLibrary_k63oc")
 }
 autoplay = "trap"
