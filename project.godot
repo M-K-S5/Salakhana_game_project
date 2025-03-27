@@ -14,7 +14,7 @@ config/name="Salakhana's game"
 config/tags=PackedStringArray("2d", "osc")
 run/main_scene="res://Scenes/main_scene.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Assets/Placeholders/icon.svg"
+config/icon="res://icon.svg"
 
 [autoload]
 

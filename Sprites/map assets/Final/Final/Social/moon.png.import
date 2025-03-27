@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du58qu0g6v8a"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://bsn3mee2o83n1"
+path="res://.godot/imported/moon.png-064542d80655663733b10480f1da5d81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-ae2ff187382fc8e2d22f91d1b8378633.ctex"]
+source_file="res://Sprites/map assets/Final/Final/Social/moon.png"
+dest_files=["res://.godot/imported/moon.png-064542d80655663733b10480f1da5d81.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
