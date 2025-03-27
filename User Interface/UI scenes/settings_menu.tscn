@@ -15,6 +15,7 @@ corner_radius_top_left = 20
 corner_radius_top_right = 5
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 5
+corner_detail = 1
 shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
 shadow_size = 15
 shadow_offset = Vector2(2.655, 3.75)
@@ -37,6 +38,7 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssvce"]
 bg_color = Color(0.430874, 0.189964, 0.189693, 1)
@@ -44,6 +46,7 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+corner_detail = 1
 
 [sub_resource type="Theme" id="Theme_cbtc4"]
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_465lx")
@@ -62,6 +65,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 shadow_color = Color(0.891172, 0.535061, 7.70092e-07, 0.6)
 shadow_size = 2
 shadow_offset = Vector2(2, 1.655)
@@ -78,6 +82,7 @@ CheckBox/styles/pressed = SubResource("StyleBoxFlat_h2w7t")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i14ap"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6cr4"]
 content_margin_bottom = 14.0
@@ -90,6 +95,7 @@ border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
+corner_detail = 1
 expand_margin_top = 15.0
 expand_margin_right = 30.0
 shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
@@ -108,6 +114,7 @@ border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
+corner_detail = 1
 shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
 shadow_size = 3
 shadow_offset = Vector2(2.655, 3.75)
@@ -281,14 +288,14 @@ theme = SubResource("Theme_xeib7")
 [node name="back" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.444
-anchor_top = 0.63
-anchor_right = 0.641
-anchor_bottom = 0.733
-offset_left = -431.488
-offset_top = 111.76
-offset_right = -324.368
-offset_bottom = 144.64
+anchor_left = 0.069
+anchor_top = 0.802
+anchor_right = 0.273
+anchor_bottom = 0.896
+offset_left = 0.511993
+offset_top = 0.303955
+offset_right = 99.5679
+offset_bottom = 39.0159
 scale = Vector2(0.703323, 0.608136)
 theme = SubResource("Theme_2i1d2")
 text = "Back"
