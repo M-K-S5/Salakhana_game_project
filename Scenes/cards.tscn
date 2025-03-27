@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://duoxg0yfh8p0f"]
+
+[ext_resource type="Script" uid="uid://b3gvkubys5g5n" path="res://Scripts/cards.gd" id="1_xdaph"]
+[ext_resource type="Texture2D" uid="uid://uurmo5q5mvap" path="res://Assets/Placeholders/cards/Untitled70_20250317075239.png" id="2_4ll3t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ll3t"]
+atlas = ExtResource("2_4ll3t")
+region = Rect2(0, 0, 1280, 426)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb33y"]
+atlas = ExtResource("2_4ll3t")
+region = Rect2(0, 426, 1280, 426)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eomap"]
+atlas = ExtResource("2_4ll3t")
+region = Rect2(0, 852, 1280, 426)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqm8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ll3t")
+}],
+"loop": true,
+"name": &"Right_cards",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb33y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eomap")
+}],
+"loop": true,
+"name": &"left_cards",
+"speed": 5.0
+}]
+
+[node name="cards" type="Node2D"]
+script = ExtResource("1_xdaph")
+Selected = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qqm8y")
+animation = &"left_cards"
+autoplay = "default"

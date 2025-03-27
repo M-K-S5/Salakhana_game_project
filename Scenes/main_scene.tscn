@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_oh7rm"]
@@ -658,3 +659,82 @@ sources/0 = SubResource("TileSetAtlasSource_6kucw")
 
 [node name="level_map" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_4h4rf")
+
+[gd_scene load_steps=12 format=3 uid="uid://be10amr8b7ki1"]
+
+[ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
+[ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="2_jv6wh"]
+[ext_resource type="Texture2D" uid="uid://dmrw1lvd4cerl" path="res://Assets/Placeholders/icon.svg" id="2_mgkiw"]
+[ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="3_6ev3c"]
+[ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="3_x6ack"]
+[ext_resource type="Script" uid="uid://opoxanq5yueo" path="res://Scripts/health_bar.gd" id="4_iacmt"]
+[ext_resource type="Script" uid="uid://bytg8s45pkp8q" path="res://Scripts/charge.gd" id="4_maf8m"]
+[ext_resource type="Script" uid="uid://rfcay2hwr7k" path="res://Scripts/score.gd" id="7_m1efj"]
+[ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="8_huasi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ou7uo"]
+
+[node name="player" parent="." instance=ExtResource("1_2qniy")]
+acceleration = 300.0
+floor_friction = 0.75
+jump_height = 650.0
+jump_time_to_peak = 0.35
+jump_time_to_descend = 0.225
+dash_force = 250.0
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.2, 0.2)
+position_smoothing_enabled = true
+drag_horizontal_offset = 1.0
+drag_vertical_offset = -1.0
+drag_left_margin = 0.55
+drag_right_margin = 0.15
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
+
+[node name="cards" parent="player/Camera2D/CanvasLayer" instance=ExtResource("2_jv6wh")]
+position = Vector2(592, 532)
+scale = Vector2(0.5, 0.5)
+
+[node name="charge" parent="player/Camera2D/CanvasLayer" instance=ExtResource("3_6ev3c")]
+offset_left = 687.0
+offset_top = 360.0
+offset_right = 1239.0
+offset_bottom = 664.0
+script = ExtResource("4_maf8m")
+current_charge = 3
+
+[node name="health bar" parent="player/Camera2D/CanvasLayer" instance=ExtResource("3_x6ack")]
+offset_left = 690.0
+offset_top = 442.0
+offset_right = 1242.0
+offset_bottom = 746.0
+script = ExtResource("4_iacmt")
+current_health = 3
+
+[node name="score" type="Label" parent="player/Camera2D/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "score: 0"
+script = ExtResource("7_m1efj")
+
+[node name="Ground" type="AnimatableBody2D" parent="."]
+position = Vector2(0, 180)
+physics_material_override = SubResource("PhysicsMaterial_6l7je")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape2D_ou7uo")
+
+[node name="Position Reference" type="Sprite2D" parent="."]
+position = Vector2(300, 0)
+texture = ExtResource("2_mgkiw")
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("8_huasi")]
+z_index = -1
+position = Vector2(555, 16)

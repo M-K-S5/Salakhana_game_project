@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d087el1ow6rki"]
+
+[ext_resource type="Texture2D" uid="uid://btogmqgq2livl" path="res://Assets/Placeholders/UI/white bar.png" id="1_q51uj"]
+[ext_resource type="Texture2D" uid="uid://cosq1jls5j1ac" path="res://Assets/Placeholders/UI/blue bar.png" id="2_8rcoy"]
+[ext_resource type="Script" uid="uid://cuomchll4w2jr" path="res://Scripts/charge_bar.gd" id="3_q51uj"]
+
+[node name="charge_bar" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 5.0
+value = 4.0
+rounded = true
+texture_under = ExtResource("1_q51uj")
+texture_progress = ExtResource("2_8rcoy")
+script = ExtResource("3_q51uj")
