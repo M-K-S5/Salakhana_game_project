@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://lnsbmvrsxl5e"]
+[gd_scene load_steps=49 format=3 uid="uid://lnsbmvrsxl5e"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_olcgw"]
 [ext_resource type="Texture2D" uid="uid://dbc51e3bqlde8" path="res://Sprites/map assets/decorations/fence_1.png" id="2_dlo4w"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://clhqa0csd7g3t" path="res://Scenes/fence.tscn" id="11_dlo4w"]
 [ext_resource type="Texture2D" uid="uid://bqmuq1is71h3k" path="res://Sprites/map assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Trees/Golden-Tree.png" id="11_rg57b"]
 [ext_resource type="Texture2D" uid="uid://cpm4s065151a6" path="res://Sprites/map assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="12_macow"]
+[ext_resource type="PackedScene" uid="uid://b40etsi3ee31q" path="res://Scenes/enemy_w.tscn" id="19_6agt2"]
+[ext_resource type="PackedScene" uid="uid://cntkhqa8iqiu3" path="res://Scenes/enemy_i.tscn" id="19_6rnyw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g08wa"]
 texture = ExtResource("1_olcgw")
@@ -18787,8 +18789,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_chwn1"]
 _data = {
-"RESET": SubResource("Animation_v7gqg"),
-"move": SubResource("Animation_wjtap")
+&"RESET": SubResource("Animation_v7gqg"),
+&"move": SubResource("Animation_wjtap")
 }
 
 [sub_resource type="Animation" id="Animation_2ooml"]
@@ -18824,8 +18826,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p20hg"]
 _data = {
-"RESET": SubResource("Animation_2ooml"),
-"move": SubResource("Animation_hvaui")
+&"RESET": SubResource("Animation_2ooml"),
+&"move": SubResource("Animation_hvaui")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
@@ -18864,8 +18866,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie368"]
 _data = {
-"RESET": SubResource("Animation_5qtum"),
-"trap": SubResource("Animation_q6lx1")
+&"RESET": SubResource("Animation_5qtum"),
+&"trap": SubResource("Animation_q6lx1")
 }
 
 [sub_resource type="Animation" id="Animation_fls3e"]
@@ -18901,8 +18903,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63oc"]
 _data = {
-"RESET": SubResource("Animation_fls3e"),
-"trap": SubResource("Animation_x5dfk")
+&"RESET": SubResource("Animation_fls3e"),
+&"trap": SubResource("Animation_x5dfk")
 }
 
 [node name="map" type="Node2D"]
@@ -18938,7 +18940,7 @@ position = Vector2(683, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moving platforms"]
 libraries = {
-"": SubResource("AnimationLibrary_chwn1")
+&"": SubResource("AnimationLibrary_chwn1")
 }
 autoplay = "move"
 
@@ -18947,7 +18949,7 @@ position = Vector2(823, -145)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moving platforms2"]
 libraries = {
-"": SubResource("AnimationLibrary_p20hg")
+&"": SubResource("AnimationLibrary_p20hg")
 }
 autoplay = "move"
 
@@ -18969,7 +18971,7 @@ scale = Vector2(1.62091, 1.56347)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fence"]
 libraries = {
-"": SubResource("AnimationLibrary_ie368")
+&"": SubResource("AnimationLibrary_ie368")
 }
 autoplay = "trap"
 
@@ -18979,6 +18981,17 @@ scale = Vector2(1.36648, 1.28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fence2"]
 libraries = {
-"": SubResource("AnimationLibrary_k63oc")
+&"": SubResource("AnimationLibrary_k63oc")
 }
 autoplay = "trap"
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemyW" parent="enemies" instance=ExtResource("19_6agt2")]
+position = Vector2(49, 88)
+
+[node name="enemyI" parent="enemies" instance=ExtResource("19_6rnyw")]
+position = Vector2(4550, 50)
+
+[node name="enemyI2" parent="enemies" instance=ExtResource("19_6rnyw")]
+position = Vector2(2120, 47)
