@@ -24,3 +24,10 @@ Hzm to do list:
 		2 useless full ✅
 
 		menu icon ✅
+	Ui code:
+		player ui script 
+		main menu script ✅
+		settings script ✅
+		cards scripts
+		cool down and charge script
+		

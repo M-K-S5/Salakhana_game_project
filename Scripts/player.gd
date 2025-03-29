@@ -1,4 +1,10 @@
 extends CharacterBody2D
+#hzm added this :
+#----------------
+@onready var bar_top = $CanvasLayer/PlayerScene/TextureProgressBar3
+@onready var bar_bottom = $CanvasLayer/PlayerScene/TextureProgressBar4
+#----------------
+
 
 @onready var health_bar: TextureProgressBar = $"Camera2D/CanvasLayer/health bar"
 @onready var charge: TextureProgressBar = $Camera2D/CanvasLayer/charge
@@ -131,3 +137,25 @@ func _physics_process(delta: float) -> void:
 		running = false
 
 	move_and_slide()
+
+#-------------hzm added this-------------#
+	
+	var movement_progress: float = 0.0
+	var charges: int = 0
+	var last_step: int = 0
+	const STEPS: int = 7
+	const THRESHOLD: float = 0.9
+	var movement = velocity.length()
+
+	if movement > 0:
+		movement_progress += movement
+		var step_value = floor(movement_progress * STEPS) / float(STEPS)
+		
+		bar_top.value = step_value * bar_top.max_value
+		bar_bottom.value = step_value * bar_bottom.max_value
+		
+		if step_value > last_step and step_value >= THRESHOLD:
+			charges += 1
+			print("Charges:", charges)
+		last_step = step_value
+#---------------------------------------#

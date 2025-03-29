@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfrvt6768ml8x"]
+[gd_scene load_steps=23 format=3 uid="uid://bfrvt6768ml8x"]
 
+[ext_resource type="Script" path="res://User Interface/UI scenes/player_sceneScript.gd" id="1_mqmux"]
 [ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
 [ext_resource type="Texture2D" uid="uid://cvplqjquad7ax" path="res://User Interface/UI resources/Player UI/Simple page.png" id="2_bf81c"]
 [ext_resource type="Texture2D" uid="uid://cqtyemcgl5jgw" path="res://User Interface/UI resources/Player UI/dash card not full.png" id="3_w1ixj"]
@@ -8,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://d0457knlv6f2j" path="res://User Interface/UI resources/Player UI/heal card not full.png" id="6_u1dmg"]
 [ext_resource type="Texture2D" uid="uid://dhbvf1gd1ay8k" path="res://User Interface/UI resources/Player UI/heal card full.png" id="7_tcatu"]
 [ext_resource type="Texture2D" uid="uid://lsygnu187ndo" path="res://User Interface/UI resources/Player UI/heal card caps.png" id="8_8pnnd"]
+[ext_resource type="Texture2D" uid="uid://cvu3mn1loc21b" path="res://User Interface/UI resources/Player UI/1 useless empty.png" id="9_k3lq6"]
+[ext_resource type="Texture2D" uid="uid://bl417mubo15lx" path="res://User Interface/UI resources/Player UI/1 useless full.png" id="10_akpwr"]
+[ext_resource type="Texture2D" uid="uid://qd7fk21o1a5s" path="res://User Interface/UI resources/Player UI/1 useless empty caps.png" id="11_fvtxw"]
+[ext_resource type="Texture2D" uid="uid://c57s66mvfhb5u" path="res://User Interface/UI resources/Player UI/2 useless empty.png" id="12_gn8hb"]
+[ext_resource type="Texture2D" uid="uid://b6sb4miqdw0nt" path="res://User Interface/UI resources/Player UI/2 useless full.png" id="13_3h6w2"]
+[ext_resource type="Texture2D" uid="uid://chfokk4lrdpty" path="res://User Interface/UI resources/Player UI/2 useless empty caps.png" id="14_sdjjy"]
 
 [sub_resource type="Gradient" id="Gradient_v8fnk"]
 
@@ -27,6 +34,17 @@ shader_parameter/speed = 3.0
 shader_parameter/intensity = 0.03
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_q424s")
 
+[sub_resource type="Gradient" id="Gradient_8yt2v"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_56yd7"]
+color_ramp = SubResource("Gradient_8yt2v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsuuu"]
+shader = ExtResource("1_qwnk5")
+shader_parameter/speed = 0.5
+shader_parameter/intensity = 0.02
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_56yd7")
+
 [node name="PlayerScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -34,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mqmux")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_nck4r")
@@ -70,12 +89,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.5
-offset_top = -58.0
-offset_right = 56.5
-offset_bottom = 54.0
+offset_left = -57.5
+offset_top = -59.0
+offset_right = 55.5
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.01777, 1.01777)
 texture = ExtResource("5_40m5r")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
@@ -108,3 +128,45 @@ offset_bottom = 0.0399933
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_8pnnd")
+
+[node name="TextureProgressBar4" type="TextureProgressBar" parent="."]
+material = SubResource("ShaderMaterial_nsuuu")
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 63.0
+offset_right = 1478.0
+offset_bottom = 404.0
+max_value = 7.0
+fill_mode = 2
+texture_under = ExtResource("9_k3lq6")
+texture_progress = ExtResource("10_akpwr")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1085.0
+offset_top = 68.0
+offset_right = 1464.43
+offset_bottom = 415.67
+scale = Vector2(0.136055, 0.965065)
+texture = ExtResource("11_fvtxw")
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 18.0
+offset_right = 1136.0
+offset_bottom = 69.0
+scale = Vector2(1.00212, 0.995102)
+min_value = -1.0
+max_value = 7.0
+fill_mode = 1
+texture_under = ExtResource("12_gn8hb")
+texture_progress = ExtResource("13_3h6w2")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 18.0
+offset_right = 1137.0
+offset_bottom = 69.0
+texture = ExtResource("14_sdjjy")
