@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=17 format=4 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
 [ext_resource type="PackedScene" uid="uid://lnsbmvrsxl5e" path="res://Scenes/map.tscn" id="1_mai8y"]
@@ -10,9 +10,16 @@
 [ext_resource type="Script" path="res://Scripts/charge.gd" id="4_maf8m"]
 [ext_resource type="Script" path="res://Scripts/score.gd" id="7_m1efj"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="8_huasi"]
+[ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="9_l4edp"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="9_vjsa8"]
 
 [sub_resource type="TileSet" id="TileSet_4h4rf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cplwi"]
+font = ExtResource("9_l4edp")
+font_size = 51
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
 
@@ -76,9 +83,12 @@ script = ExtResource("4_iacmt")
 current_health = 3
 
 [node name="score" type="Label" parent="player/Camera2D/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "score: 0"
+offset_left = 19.0
+offset_top = 566.0
+offset_right = 218.0
+offset_bottom = 635.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_cplwi")
 script = ExtResource("7_m1efj")
 
 [node name="Ground" type="AnimatableBody2D" parent="."]

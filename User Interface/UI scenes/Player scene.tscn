@@ -1,7 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfrvt6768ml8x"]
+[gd_scene load_steps=13 format=3 uid="uid://bfrvt6768ml8x"]
 
 [ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
 [ext_resource type="Texture2D" uid="uid://cvplqjquad7ax" path="res://User Interface/UI resources/Player UI/Simple page.png" id="2_bf81c"]
+[ext_resource type="Texture2D" uid="uid://cqtyemcgl5jgw" path="res://User Interface/UI resources/Player UI/dash card not full.png" id="3_w1ixj"]
+[ext_resource type="Texture2D" uid="uid://b41k5myvsxbve" path="res://User Interface/UI resources/Player UI/dash card full.png" id="4_tr58k"]
+[ext_resource type="Texture2D" uid="uid://b86hi63eerruc" path="res://User Interface/UI resources/Player UI/dash card caps.png" id="5_40m5r"]
+[ext_resource type="Texture2D" uid="uid://d0457knlv6f2j" path="res://User Interface/UI resources/Player UI/heal card not full.png" id="6_u1dmg"]
+[ext_resource type="Texture2D" uid="uid://dhbvf1gd1ay8k" path="res://User Interface/UI resources/Player UI/heal card full.png" id="7_tcatu"]
+[ext_resource type="Texture2D" uid="uid://lsygnu187ndo" path="res://User Interface/UI resources/Player UI/heal card caps.png" id="8_8pnnd"]
 
 [sub_resource type="Gradient" id="Gradient_v8fnk"]
 
@@ -17,7 +23,7 @@ noise = SubResource("FastNoiseLite_gcr0s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nck4r"]
 shader = ExtResource("1_qwnk5")
-shader_parameter/speed = 1.0
+shader_parameter/speed = 3.0
 shader_parameter/intensity = 0.03
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_q424s")
 
@@ -31,8 +37,74 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_nck4r")
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 0.959798)
 texture = ExtResource("2_bf81c")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.565
+anchor_right = 0.121
+anchor_bottom = 0.725
+offset_left = 5.504
+offset_top = -89.12
+offset_right = 4.60799
+offset_bottom = -87.8
+grow_vertical = 2
+value = 47.0
+fill_mode = 3
+texture_under = ExtResource("3_w1ixj")
+texture_progress = ExtResource("4_tr58k")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureProgressBar2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -58.0
+offset_right = 56.5
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_40m5r")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.565
+anchor_right = 0.121
+anchor_bottom = 0.725
+offset_left = 4.504
+offset_top = 42.38
+offset_right = 3.60799
+offset_bottom = 42.7
+grow_vertical = 2
+value = 47.0
+fill_mode = 3
+texture_under = ExtResource("6_u1dmg")
+texture_progress = ExtResource("7_tcatu")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009
+anchor_right = 0.991
+anchor_bottom = 0.99
+offset_left = -0.00800002
+offset_top = 1.0
+offset_right = 0.00799561
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_8pnnd")
