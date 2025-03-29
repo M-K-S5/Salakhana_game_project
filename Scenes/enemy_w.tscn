@@ -73,7 +73,6 @@ position = Vector2(78.75, -0.374998)
 scale = Vector2(2.50781, 2.39453)
 sprite_frames = SubResource("SpriteFrames_plxki")
 autoplay = "default"
-frame_progress = 0.687102
 
 [node name="RayCastright" type="RayCast2D" parent="."]
 position = Vector2(72, 21)
