@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=15 format=4 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
 [ext_resource type="PackedScene" uid="uid://lnsbmvrsxl5e" path="res://Scenes/map.tscn" id="1_mai8y"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/charge.gd" id="4_maf8m"]
 [ext_resource type="Script" path="res://Scripts/score.gd" id="7_m1efj"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="8_huasi"]
+[ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="9_vjsa8"]
 
 [sub_resource type="TileSet" id="TileSet_4h4rf"]
 
@@ -46,6 +47,11 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
+
+[node name="PlayerScene" parent="player/Camera2D/CanvasLayer" instance=ExtResource("9_vjsa8")]
+offset_left = -23.615
+offset_right = -23.615
+scale = Vector2(1.06, 1.06)
 
 [node name="cards" parent="player/Camera2D/CanvasLayer" instance=ExtResource("2_jv6wh")]
 position = Vector2(592, 532)

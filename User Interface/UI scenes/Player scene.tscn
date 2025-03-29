@@ -1,4 +1,25 @@
-[gd_scene format=3 uid="uid://bfrvt6768ml8x"]
+[gd_scene load_steps=7 format=3 uid="uid://bfrvt6768ml8x"]
+
+[ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
+[ext_resource type="Texture2D" uid="uid://cvplqjquad7ax" path="res://User Interface/UI resources/Player UI/Simple page.png" id="2_bf81c"]
+
+[sub_resource type="Gradient" id="Gradient_v8fnk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gcr0s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q424s"]
+invert = true
+generate_mipmaps = false
+seamless = true
+seamless_blend_skirt = 0.125
+color_ramp = SubResource("Gradient_v8fnk")
+noise = SubResource("FastNoiseLite_gcr0s")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nck4r"]
+shader = ExtResource("1_qwnk5")
+shader_parameter/speed = 1.0
+shader_parameter/intensity = 0.03
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_q424s")
 
 [node name="PlayerScene" type="Control"]
 layout_mode = 3
@@ -7,3 +28,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_nck4r")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1, 0.959798)
+texture = ExtResource("2_bf81c")
