@@ -1,30 +1,30 @@
 [gd_scene load_steps=34 format=3 uid="uid://fvipmtgkk5me"]
 
-[ext_resource type="Texture2D" uid="uid://d4my3x2eybjyw" path="res://Assets/Placeholders/Player/Dash.png" id="1_kj0ft"]
-[ext_resource type="Script" uid="uid://cppijqdvvh6et" path="res://Scripts/player.gd" id="1_r2d6d"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_r2d6d"]
+[ext_resource type="Texture2D" uid="uid://bcgmur03sijgr" path="res://Assets/sprites/dash.png" id="2_6tn7g"]
 [ext_resource type="Texture2D" uid="uid://cvk0yowi6oh3h" path="res://Assets/sprites/AnimationSheet_Character.png" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://chf85d03h6f8a" path="res://Assets/Placeholders/Player/Grappling Hook.png" id="4_o3fxm"]
-[ext_resource type="Script" uid="uid://bbxq8qi7h6jhm" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
+[ext_resource type="Script" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1sx1"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(20, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vsju"]
+atlas = ExtResource("2_6tn7g")
+region = Rect2(0, 0, 32, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1wsx"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(270, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_04qj1"]
+atlas = ExtResource("2_6tn7g")
+region = Rect2(32, 0, 32, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4fmby"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(520, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4lew"]
+atlas = ExtResource("2_6tn7g")
+region = Rect2(64, 0, 32, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ksa6j"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(770, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_npuvq"]
+atlas = ExtResource("2_6tn7g")
+region = Rect2(96, 0, 32, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5qkh"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(1020, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_egi5t"]
+atlas = ExtResource("2_6tn7g")
+region = Rect2(128, 0, 32, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("3_fkybt")
@@ -114,19 +114,19 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1sx1")
+"texture": SubResource("AtlasTexture_3vsju")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s1wsx")
+"texture": SubResource("AtlasTexture_04qj1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4fmby")
+"texture": SubResource("AtlasTexture_f4lew")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ksa6j")
+"texture": SubResource("AtlasTexture_npuvq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l5qkh")
+"texture": SubResource("AtlasTexture_egi5t")
 }],
 "loop": false,
 "name": &"Dash",
@@ -222,7 +222,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ntgo"]
-size = Vector2(250, 353)
+size = Vector2(149, 234)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -234,8 +234,8 @@ floor_friction = 0.5
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_vw3cs")
 animation = &"Dash"
-autoplay = "Idle"
 script = ExtResource("7_oh5p7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -3)
 shape = SubResource("RectangleShape2D_5ntgo")
