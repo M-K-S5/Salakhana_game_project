@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0mul2jxkkuj4" path="res://User Interface/UI resources/Player UI/stamina par not full.png" id="1_vwjch"]
 [ext_resource type="Texture2D" uid="uid://c2t7l88p52yu5" path="res://User Interface/UI resources/Player UI/stamina par full.png" id="2_rjixe"]
-[ext_resource type="Script" path="res://Scripts/charge_bar.gd" id="3_q51uj"]
+[ext_resource type="Script" uid="uid://cuomchll4w2jr" path="res://Scripts/charge_bar.gd" id="3_q51uj"]
 
 [node name="charge_bar" type="TextureProgressBar"]
 anchors_preset = -1
