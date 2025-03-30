@@ -3,6 +3,10 @@ extends CharacterBody2D
 @onready var health_bar: TextureProgressBar = $"Camera2D/CanvasLayer/health bar"
 @onready var charge: TextureProgressBar = $Camera2D/CanvasLayer/charge
 
+# Grapple hook
+const ACC = 0.1
+const DACC = 0.1
+
 @export_category("Movement")
 @export var move_speed = 2500.0
 @export var acceleration = 450.0
@@ -12,7 +16,7 @@ extends CharacterBody2D
 @export var jump_charges_max:int = 2
 @onready var jump_charges = jump_charges_max
 @onready var jump_velocity = ((2 * jump_height) / jump_time_to_peak) * -1
-@export var jump_height:float = 300
+@export var jump_height:float = 50
 @export var jump_time_to_peak:float = 0.5
 @export var jump_time_to_descend:float = 0.25
 
@@ -126,8 +130,10 @@ func _physics_process(delta: float) -> void:
 	velocity.x = running_speed + dash_speed + external_force
 	
 	if direction:
+		velocity.x = lerp(velocity.x ,move_speed * direction , ACC)
 		running = true
 	else:
+		velocity.x = lerp(velocity.x ,0.0 , DACC)
 		running = false
 
 	move_and_slide()

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://br8hwixhiujf2" path="res://Scripts/coin.gd" id="1_jgi06"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qo34"]
-radius = 19.9249
+radius = 2.25
 
 [node name="coin" type="Node2D"]
 script = ExtResource("1_jgi06")
@@ -17,7 +17,6 @@ scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_2qo34")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(8, 8)
 texture = ExtResource("1_2qo34")
 hframes = 16
 vframes = 25

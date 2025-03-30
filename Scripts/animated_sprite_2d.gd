@@ -13,7 +13,7 @@ enum AnimationState {
 	JUMP,
 	FALL,
 	DASH,
-	IDLE
+	IDLE,
 }
 var current_state: AnimationState = AnimationState.IDLE
 

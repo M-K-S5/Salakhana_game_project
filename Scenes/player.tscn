@@ -1,30 +1,17 @@
-[gd_scene load_steps=34 format=3 uid="uid://fvipmtgkk5me"]
+[gd_scene load_steps=33 format=3 uid="uid://fvipmtgkk5me"]
 
-[ext_resource type="Texture2D" uid="uid://d4my3x2eybjyw" path="res://Assets/Placeholders/Player/Dash.png" id="1_kj0ft"]
 [ext_resource type="Script" uid="uid://cppijqdvvh6et" path="res://Scripts/player.gd" id="1_r2d6d"]
 [ext_resource type="Texture2D" uid="uid://cvk0yowi6oh3h" path="res://Assets/sprites/AnimationSheet_Character.png" id="3_fkybt"]
-[ext_resource type="Texture2D" uid="uid://chf85d03h6f8a" path="res://Assets/Placeholders/Player/Grappling Hook.png" id="4_o3fxm"]
+[ext_resource type="Script" uid="uid://cq7lvag5erb5a" path="res://Scripts/grapple_controler.gd" id="4_vgqql"]
 [ext_resource type="Script" uid="uid://bbxq8qi7h6jhm" path="res://Scripts/animated_sprite_2d.gd" id="7_oh5p7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1sx1"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(20, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(32, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1wsx"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(270, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4fmby"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(520, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ksa6j"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(770, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5qkh"]
-atlas = ExtResource("1_kj0ft")
-region = Rect2(1020, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("3_fkybt")
@@ -34,25 +21,9 @@ region = Rect2(128, 160, 32, 32)
 atlas = ExtResource("3_fkybt")
 region = Rect2(160, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rjny"]
-atlas = ExtResource("4_o3fxm")
-region = Rect2(20, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7al4"]
-atlas = ExtResource("4_o3fxm")
-region = Rect2(270, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fgtvj"]
-atlas = ExtResource("4_o3fxm")
-region = Rect2(520, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qblql"]
-atlas = ExtResource("4_o3fxm")
-region = Rect2(770, 15, 250, 353)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1oyy"]
-atlas = ExtResource("4_o3fxm")
-region = Rect2(1020, 15, 250, 353)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
 atlas = ExtResource("3_fkybt")
@@ -110,23 +81,42 @@ region = Rect2(192, 96, 32, 32)
 atlas = ExtResource("3_fkybt")
 region = Rect2(224, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gysh"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfarp"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6uwr"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(224, 224, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vw3cs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1sx1")
+"texture": SubResource("AtlasTexture_6t5aa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s1wsx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4fmby")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ksa6j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5qkh")
+"texture": SubResource("AtlasTexture_fkybt")
 }],
 "loop": false,
 "name": &"Dash",
@@ -145,19 +135,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4rjny")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h7al4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgtvj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qblql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i1oyy")
+"texture": SubResource("AtlasTexture_vgqql")
 }],
 "loop": true,
 "name": &"Grappling_Hook",
@@ -219,23 +197,62 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpjfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi64h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1odr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gysh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfarp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6uwr")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ntgo"]
-size = Vector2(250, 353)
-
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
+radius = 18.0
+height = 64.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_r2d6d")
+move_speed = 250.0
 acceleration = 200.0
 floor_friction = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(7, 7)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vw3cs")
-animation = &"Grappling_Hook"
+animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.902847
 script = ExtResource("7_oh5p7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5ntgo")
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_vgqql")
+
+[node name="grapple controler" type="Node2D" parent="."]
+script = ExtResource("4_vgqql")
+
+[node name="RayCast2D" type="RayCast2D" parent="grapple controler"]
+target_position = Vector2(500, 0)
+
+[node name="Line2D" type="Line2D" parent="grapple controler"]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0, 0, 0, 1)

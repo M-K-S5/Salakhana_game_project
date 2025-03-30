@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 5
+const speed = 40
 
 var direction = 1
 
@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 		direction = 1
 		animatedSprite.flip_h = false
 		
-	velocity.x += direction * speed 
+	velocity.x += direction * speed * delta
 	move_and_slide()
