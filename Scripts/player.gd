@@ -60,17 +60,17 @@ func get_var_gravity():
 func jump():
 	velocity.y = jump_velocity
 	if not is_on_floor():
-		jump_charges -= 1
+		charge.use_charge()
 		print("Mid-Air Jump")
 	else:
 		print("Jump")
-	print(jump_charges, " Jump charges left")
 
 func dash():
 	print("Dash")
 	dashing = true
 	velocity.y = 0
 	dash_speed = (dash_force * scale.y * 10)
+	charge.use_charge()
 	await $AnimatedSprite2D.animation_finished
 	dash_speed = 0
 	dashing = false
@@ -85,7 +85,7 @@ func _physics_process(delta: float) -> void:
 		jump_charges = jump_charges_max
 
 	# Handle jump.
-	if is_on_floor() || jump_charges > 0:
+	if is_on_floor() || charge.current_charge > 0:
 		if not dashing:
 			can_jump = true
 		else:
@@ -100,7 +100,6 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("dash") && can_dash:
 		dash()
-		charge.use_charge()
 	
 	if Input.is_action_just_pressed("jump") && can_jump :
 		jump()

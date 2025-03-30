@@ -10,6 +10,6 @@ func use_charge():
 	current_charge -= 1
 	print("charges left " + str(current_charge))
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player.is_on_floor():
 		current_charge = Max_charges

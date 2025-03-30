@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var boosted_speed = 500
 var player_position
 var target_position
-@onready var player = $player
+@onready var player = "/root/player"
 @onready var detection_area = $Area2D
 @onready var animated_sprite = $AnimatedSprite2D
 var is_player_in_area = false
@@ -16,7 +16,7 @@ func _ready():
 	detection_area.connect("area_exited", Callable(self, "_on_detection_area_area_exited"))
 	animated_sprite.play("idle")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_player_in_area:
 		if position.x > player.global_position.x:
 			animated_sprite.flip_h = true
