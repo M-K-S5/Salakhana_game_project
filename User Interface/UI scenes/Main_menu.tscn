@@ -2,11 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="1_5xemq"]
 [ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_ghc4h"]
-[ext_resource type="Script" path="res://User Interface/UI scenes/main_menu.gd" id="1_ivkge"]
+[ext_resource type="Script" uid="uid://wcohlmxqoiyx" path="res://User Interface/UI scenes/main_menu.gd" id="1_ivkge"]
 [ext_resource type="Texture2D" uid="uid://bmww7h4v7fuvx" path="res://User Interface/UI resources/logo.png" id="2_drr11"]
 [ext_resource type="StyleBox" uid="uid://cf66h56dqusbd" path="res://User Interface/UI resources/Button thingy.tres" id="3_t0bqg"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="4_fgoo8"]
-[ext_resource type="Texture2D" uid="uid://bw2hqn6jbkt5v" path="res://User Interface/UI resources/fae7ccc262429528552d199e9225bc8a.jpg" id="6_tixui"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh5xn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -82,6 +81,9 @@ font_size = 31
 font = ExtResource("4_fgoo8")
 font_size = 42
 font_color = Color(0.301961, 0.113725, 0.113725, 1)
+
+[sub_resource type="Resource" id="Resource_3yo6x"]
+metadata/__load_path__ = "res://User Interface/UI resources/fae7ccc262429528552d199e9225bc8a.jpg"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -253,7 +255,7 @@ label_settings = SubResource("LabelSettings_si8rs")
 [node name="Ace" type="Sprite2D" parent="."]
 position = Vector2(285, 365)
 scale = Vector2(0.307959, 0.307959)
-texture = ExtResource("6_tixui")
+texture = SubResource("Resource_3yo6x")
 
 [connection signal="pressed" from="Control/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/settingsButton" to="." method="_on_settings_button_pressed"]

@@ -8,7 +8,7 @@ var direction = 1
 @onready var left =  $RayCastleft
 @onready var animatedSprite = $AnimatedSprite2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if right.is_colliding():
 		direction = -1
 		animatedSprite.flip_h = true

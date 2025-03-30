@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+
 @onready var health_bar: TextureProgressBar = $"Camera2D/CanvasLayer/health bar"
 @onready var charge: TextureProgressBar = $Camera2D/CanvasLayer/charge
 
@@ -62,17 +64,17 @@ func get_var_gravity():
 func jump():
 	velocity.y = jump_velocity
 	if not is_on_floor():
-		jump_charges -= 1
+		charge.use_charge()
 		print("Mid-Air Jump")
 	else:
 		print("Jump")
-	print(jump_charges, " Jump charges left")
 
 func dash():
 	print("Dash")
 	dashing = true
 	velocity.y = 0
 	dash_speed = (dash_force * scale.y * 10)
+	charge.use_charge()
 	await $AnimatedSprite2D.animation_finished
 	dash_speed = 0
 	dashing = false
@@ -87,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		jump_charges = jump_charges_max
 
 	# Handle jump.
-	if is_on_floor() || jump_charges > 0:
+	if is_on_floor() || charge.current_charge > 0:
 		if not dashing:
 			can_jump = true
 		else:
@@ -95,13 +97,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		can_jump = false
 	
-	if not dash_on_cooldown:
+	if charge.current_charge > 0:
 		can_dash = true
-	
-	# handling health & charges
-	health_bar.take_damage()
-	charge.use_charge()
-	
+	else:
+		can_dash = false
+
 	if Input.is_action_just_pressed("dash") && can_dash:
 		dash()
 	
@@ -137,3 +137,7 @@ func _physics_process(delta: float) -> void:
 		running = false
 
 	move_and_slide()
+
+#-------------hzm added this-------------#
+
+#---------------------------------------#
