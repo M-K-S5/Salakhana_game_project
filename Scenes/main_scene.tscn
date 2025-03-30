@@ -1,14 +1,14 @@
-[gd_scene load_steps=16 format=4 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=17 format=4 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
-[ext_resource type="PackedScene" uid="uid://lnsbmvrsxl5e" path="res://Scenes/map.tscn" id="1_mai8y"]
+[ext_resource type="PackedScene" uid="uid://lnsbmvrsxl5e" path="res://Sprites/map assets/map.tscn" id="1_mai8y"]
 [ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="2_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://du58qu0g6v8a" path="res://Assets/Placeholders/icon.svg" id="2_mgkiw"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="3_x6ack"]
-[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="4_iacmt"]
-[ext_resource type="Script" path="res://Scripts/charge.gd" id="4_maf8m"]
-[ext_resource type="Script" path="res://Scripts/score.gd" id="7_m1efj"]
+[ext_resource type="Script" uid="uid://opoxanq5yueo" path="res://Scripts/health_bar.gd" id="4_iacmt"]
+[ext_resource type="Script" uid="uid://bytg8s45pkp8q" path="res://Scripts/charge.gd" id="4_maf8m"]
+[ext_resource type="Script" uid="uid://rfcay2hwr7k" path="res://Scripts/score.gd" id="7_m1efj"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="8_huasi"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="9_l4edp"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="9_vjsa8"]
@@ -22,6 +22,8 @@ shadow_size = 16
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ou7uo"]
 
 [node name="Main_scene" type="Node2D"]
 
@@ -42,7 +44,7 @@ jump_time_to_peak = 0.35
 dash_force = 175.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 drag_horizontal_offset = 1.0
 drag_vertical_offset = -1.0
@@ -94,7 +96,9 @@ position = Vector2(0, 180)
 physics_material_override = SubResource("PhysicsMaterial_6l7je")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+visible = false
 shape = SubResource("WorldBoundaryShape2D_ou7uo")
+
 [node name="Position Reference" type="Sprite2D" parent="."]
 position = Vector2(300, 0)
 texture = ExtResource("2_mgkiw")

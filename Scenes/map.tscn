@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b6okbvifphe8r" path="res://Sprites/map assets/decorations/grass_1.png" id="14_ajvq6"]
 [ext_resource type="Texture2D" uid="uid://cvu3mf3tdfx7l" path="res://Sprites/map assets/Final/Final/Salt.png" id="15_cwq17"]
 [ext_resource type="PackedScene" uid="uid://b40etsi3ee31q" path="res://Scenes/enemy_w.tscn" id="16_a0h6a"]
-[ext_resource type="Script" path="res://Scripts/fire_pit.gd" id="17_rg57b"]
+[ext_resource type="Script" uid="uid://bnu6l4biw1jjp" path="res://Scripts/fire_pit.gd" id="17_rg57b"]
 [ext_resource type="PackedScene" uid="uid://cntkhqa8iqiu3" path="res://Scenes/enemy_i.tscn" id="17_wcnou"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="18_1xwpj"]
 [ext_resource type="PackedScene" uid="uid://kcnv0ft5ma8p" path="res://Scenes/fence.tscn" id="19_pmuo0"]
@@ -18796,8 +18796,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie368"]
 _data = {
-"RESET": SubResource("Animation_5qtum"),
-"trap": SubResource("Animation_q6lx1")
+&"RESET": SubResource("Animation_5qtum"),
+&"trap": SubResource("Animation_q6lx1")
 }
 
 [sub_resource type="Animation" id="Animation_fls3e"]
@@ -18833,8 +18833,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63oc"]
 _data = {
-"RESET": SubResource("Animation_fls3e"),
-"trap": SubResource("Animation_x5dfk")
+&"RESET": SubResource("Animation_fls3e"),
+&"trap": SubResource("Animation_x5dfk")
 }
 
 [sub_resource type="Animation" id="Animation_uus22"]
@@ -18870,8 +18870,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuwt4"]
 _data = {
-"RESET": SubResource("Animation_uus22"),
-"trap": SubResource("Animation_ltf6m")
+&"RESET": SubResource("Animation_uus22"),
+&"trap": SubResource("Animation_ltf6m")
 }
 
 [sub_resource type="Animation" id="Animation_v7gqg"]
@@ -18907,8 +18907,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_chwn1"]
 _data = {
-"RESET": SubResource("Animation_v7gqg"),
-"move": SubResource("Animation_wjtap")
+&"RESET": SubResource("Animation_v7gqg"),
+&"move": SubResource("Animation_wjtap")
 }
 
 [sub_resource type="Animation" id="Animation_2ooml"]
@@ -18944,8 +18944,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p20hg"]
 _data = {
-"RESET": SubResource("Animation_2ooml"),
-"move": SubResource("Animation_hvaui")
+&"RESET": SubResource("Animation_2ooml"),
+&"move": SubResource("Animation_hvaui")
 }
 
 [sub_resource type="Animation" id="Animation_rg57b"]
@@ -18982,8 +18982,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_macow"]
 _data = {
-"RESET": SubResource("Animation_rg57b"),
-"move": SubResource("Animation_vtkp8")
+&"RESET": SubResource("Animation_rg57b"),
+&"move": SubResource("Animation_vtkp8")
 }
 
 [sub_resource type="Animation" id="Animation_tuwt4"]
@@ -19019,8 +19019,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ye5v"]
 _data = {
-"RESET": SubResource("Animation_tuwt4"),
-"move": SubResource("Animation_macow")
+&"RESET": SubResource("Animation_tuwt4"),
+&"move": SubResource("Animation_macow")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
