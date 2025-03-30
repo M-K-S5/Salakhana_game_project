@@ -35,15 +35,14 @@ tile_set = SubResource("TileSet_4h4rf")
 [node name="player" parent="." instance=ExtResource("1_2qniy")]
 position = Vector2(-2066, -178)
 scale = Vector2(0.72, 0.72)
-acceleration = 300.0
+move_speed = 900.0
 floor_friction = 0.75
-jump_height = 650.0
+jump_height = 450.0
 jump_time_to_peak = 0.35
-jump_time_to_descend = 0.225
-dash_force = 250.0
+dash_force = 175.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.35, 0.35)
 position_smoothing_enabled = true
 drag_horizontal_offset = 1.0
 drag_vertical_offset = -1.0
@@ -70,7 +69,7 @@ offset_right = 925.0
 offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
 script = ExtResource("4_maf8m")
-current_charge = 3
+Max_charges = 3
 
 [node name="health bar" parent="player/Camera2D/CanvasLayer" instance=ExtResource("3_x6ack")]
 offset_left = 373.0
@@ -79,7 +78,7 @@ offset_right = 925.0
 offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
 script = ExtResource("4_iacmt")
-current_health = 3
+max_health = 3
 
 [node name="score" type="Label" parent="player/Camera2D/CanvasLayer"]
 offset_left = 19.0

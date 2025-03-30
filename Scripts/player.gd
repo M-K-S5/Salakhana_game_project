@@ -93,15 +93,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		can_jump = false
 	
-	if not dash_on_cooldown:
+	if charge.current_charge > 0:
 		can_dash = true
-	
-	# handling health & charges
-	health_bar.take_damage()
-	charge.use_charge()
-	
+	else:
+		can_dash = false
+
 	if Input.is_action_just_pressed("dash") && can_dash:
 		dash()
+		charge.use_charge()
 	
 	if Input.is_action_just_pressed("jump") && can_jump :
 		jump()
