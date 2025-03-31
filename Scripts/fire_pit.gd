@@ -1,8 +1,8 @@
 extends Node
 
-@onready var player = $"/root/player"
+@onready var player = get_parent().get_node("player")
 @onready var detection_area = $"fire pit"
-@onready var health_bar = $"/root/player/Camera2D/CanvasLayer/health bar"
+@onready var health_bar = $"player/Camera2D/CanvasLayer/health bar"
 var is_player_in_fire = false
 
 

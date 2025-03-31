@@ -141,3 +141,10 @@ func _physics_process(delta: float) -> void:
 #-------------hzm added this-------------#
 
 #---------------------------------------#
+
+# hadeel added health func
+#-------------------------
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemies"):
+		print("health decreased")
+		health_bar.take_damage()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://lnsbmvrsxl5e"]
+[gd_scene load_steps=66 format=3 uid="uid://lnsbmvrsxl5e"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_vtkp8"]
 [ext_resource type="Texture2D" uid="uid://dbc51e3bqlde8" path="res://Sprites/map assets/decorations/fence_1.png" id="2_rg57b"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://kcnv0ft5ma8p" path="res://Scenes/fence.tscn" id="19_pmuo0"]
 [ext_resource type="PackedScene" uid="uid://bdg5dv8ox1705" path="res://Scenes/moving_platforms.tscn" id="20_gg4i5"]
 [ext_resource type="PackedScene" uid="uid://cxodvv5cljt8b" path="res://Scenes/danger_zone.tscn" id="22_macow"]
+[ext_resource type="Script" uid="uid://cl3p1k6rspug6" path="res://Scripts/endpoint.gd" id="23_uus22"]
+[ext_resource type="FontFile" uid="uid://cbf5nsdsenwpy" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="24_tuwt4"]
 
 [sub_resource type="GDScript" id="GDScript_vtkp8"]
 
@@ -19026,6 +19028,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
 size = Vector2(49, 108)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ye5v"]
+size = Vector2(372, 228)
+
 [node name="map" type="Node2D"]
 script = SubResource("GDScript_vtkp8")
 
@@ -19273,7 +19278,7 @@ scale = Vector2(1.62091, 1.56347)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence"]
 libraries = {
-"": SubResource("AnimationLibrary_ie368")
+&"": SubResource("AnimationLibrary_ie368")
 }
 autoplay = "trap"
 
@@ -19283,7 +19288,7 @@ scale = Vector2(1.36648, 1.28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence2"]
 libraries = {
-"": SubResource("AnimationLibrary_k63oc")
+&"": SubResource("AnimationLibrary_k63oc")
 }
 autoplay = "trap"
 
@@ -19294,7 +19299,7 @@ scale = Vector2(1.63998, 1.63998)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence3"]
 root_node = NodePath("../../fence3")
 libraries = {
-"": SubResource("AnimationLibrary_tuwt4")
+&"": SubResource("AnimationLibrary_tuwt4")
 }
 autoplay = "trap"
 
@@ -19305,7 +19310,7 @@ position = Vector2(683, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms"]
 libraries = {
-"": SubResource("AnimationLibrary_chwn1")
+&"": SubResource("AnimationLibrary_chwn1")
 }
 autoplay = "move"
 
@@ -19314,7 +19319,7 @@ position = Vector2(823, -145)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms2"]
 libraries = {
-"": SubResource("AnimationLibrary_p20hg")
+&"": SubResource("AnimationLibrary_p20hg")
 }
 autoplay = "move"
 
@@ -19324,7 +19329,7 @@ position = Vector2(2308, -264)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms3"]
 root_node = NodePath("../../moving platforms3")
 libraries = {
-"": SubResource("AnimationLibrary_macow")
+&"": SubResource("AnimationLibrary_macow")
 }
 autoplay = "move"
 
@@ -19334,7 +19339,7 @@ position = Vector2(1244, -162)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms4"]
 root_node = NodePath("../../moving platforms4")
 libraries = {
-"": SubResource("AnimationLibrary_1ye5v")
+&"": SubResource("AnimationLibrary_1ye5v")
 }
 
 [node name="statue" type="StaticBody2D" parent="."]
@@ -19353,4 +19358,22 @@ shape = SubResource("RectangleShape2D_fg7i4")
 position = Vector2(1473, 205)
 scale = Vector2(0.52, 0.52)
 
+[node name="ENDPOINT" type="Area2D" parent="."]
+script = ExtResource("23_uus22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ENDPOINT"]
+position = Vector2(4982, 13)
+shape = SubResource("RectangleShape2D_1ye5v")
+
+[node name="Label" type="Label" parent="ENDPOINT"]
+visible = false
+offset_left = 4796.0
+offset_top = 16.0
+offset_right = 5190.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("24_tuwt4")
+theme_override_font_sizes/font_size = 44
+text = "YOU WIN !!"
+
 [connection signal="body_entered" from="fire pit/fire pit" to="fire pit" method="_on_fire_pit_body_entered"]
+[connection signal="body_entered" from="ENDPOINT" to="ENDPOINT" method="_on_body_entered"]
