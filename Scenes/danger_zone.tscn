@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g5c018stjdk1" path="res://Scripts/danger_zone.gd" id="1_44dtp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0tyx"]
-size = Vector2(1169, 114)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_44dtp"]
 
 [node name="danger zone" type="Node2D"]
 script = ExtResource("1_44dtp")
@@ -13,7 +12,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(580, 61)
-shape = SubResource("RectangleShape2D_e0tyx")
+scale = Vector2(6.45, 6.45)
+shape = SubResource("WorldBoundaryShape2D_44dtp")
 
 [node name="Timer" type="Timer" parent="Area2D"]
 

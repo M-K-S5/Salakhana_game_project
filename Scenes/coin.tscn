@@ -7,6 +7,7 @@
 radius = 2.25
 
 [node name="coin" type="Node2D"]
+scale = Vector2(12.765, 12.765)
 script = ExtResource("1_jgi06")
 
 [node name="Area2D" type="Area2D" parent="."]

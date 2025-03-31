@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var speed = 300
-@export var boosted_speed = 500
+@export var speed = 100
+@export var boosted_speed = 300
 var player_position
 var target_position
-@onready var player = get_parent().get_node("player")
+@onready var player = $"../../player"
 @onready var detection_area = $Area2D
 @onready var animated_sprite = $AnimatedSprite2D
 var is_player_in_area = false
