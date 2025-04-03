@@ -1,9 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=12 format=3 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
-[ext_resource type="PackedScene" uid="uid://lnsbmvrsxl5e" path="res://Sprites/map assets/map.tscn" id="1_mai8y"]
 [ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="2_jv6wh"]
-[ext_resource type="Texture2D" uid="uid://du58qu0g6v8a" path="res://Assets/Placeholders/icon.svg" id="2_mgkiw"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="3_x6ack"]
 [ext_resource type="Script" uid="uid://opoxanq5yueo" path="res://Scripts/health_bar.gd" id="4_iacmt"]
@@ -13,29 +11,16 @@
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="9_l4edp"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="9_vjsa8"]
 
-[sub_resource type="TileSet" id="TileSet_4h4rf"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_cplwi"]
 font = ExtResource("9_l4edp")
 font_size = 51
 shadow_size = 16
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6l7je"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ou7uo"]
-
 [node name="Main_scene" type="Node2D"]
 
-[node name="map" parent="." instance=ExtResource("1_mai8y")]
-scale = Vector2(3.73, 3.73)
-
-[node name="level_map" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAACAAAAAAAIAAQAAAACAAEAAAAIAAUAAAACAAYAAAAIAAoAAAACAAcAAAAIAAsAAAACAAkAAAAIAA0AAAACAAoAAAAIAA4AAAACAAwAAAAIABAAAAACAA0AAAAIABEAAAADAP//AAAJAAMAAAADAAAAAAAJAAQAAAADAAIAAAAJAAYAAAADAAMAAAAJAAcAAAADAAQAAAAJAAgAAAADAAYAAAAJAAoAAAADAAcAAAAJAAsAAAADAAkAAAAJAA0AAAADAAoAAAAJAA4AAAADAAwAAAAJABAAAAADAA0AAAAJABEAAAAEAP//AAAKAAMAAAAEAAAAAAAKAAQAAAAEAAEAAAAKAAUAAAAEAAIAAAAKAAYAAAAEAAMAAAAKAAcAAAAEAAQAAAAKAAgAAAAEAAYAAAAKAAoAAAAEAAcAAAAKAAsAAAAEAAkAAAAKAA0AAAAEAAoAAAAKAA4AAAAEAAwAAAAKABAAAAAEAA0AAAAKABEAAAAFAAAAAAALAAQAAAAFAAEAAAALAAUAAAAFAAYAAAALAAoAAAAFAAcAAAALAAsAAAAFAAkAAAALAA0AAAAFAAoAAAALAA4AAAAFAAwAAAALABAAAAAFAA0AAAALABEAAAAHAAAAAAANAAQAAAAHAAEAAAANAAUAAAAHAAUAAAANAAkAAAAHAAYAAAANAAoAAAAHAAcAAAANAAsAAAAHAAgAAAANAAwAAAAHAAkAAAANAA0AAAAHAAoAAAANAA4AAAAHAAsAAAANAA8AAAAHAAwAAAANABAAAAAIAAAAAAAOAAQAAAAIAAEAAAAOAAUAAAAIAAUAAAAOAAkAAAAIAAYAAAAOAAoAAAAIAAcAAAAOAAsAAAAIAAgAAAAOAAwAAAAIAAkAAAAOAA0AAAAIAAoAAAAOAA4AAAAIAAsAAAAOAA8AAAAIAAwAAAAOABAAAAAJAP//AAAPAAMAAAAJAAAAAAAPAAQAAAAJAAIAAAAPAAYAAAAJAAMAAAAPAAcAAAAJAAUAAAAPAAkAAAAJAAYAAAAPAAoAAAAJAAcAAAAPAAsAAAAJAAgAAAAPAAwAAAAJAAkAAAAPAA0AAAAJAAoAAAAPAA4AAAAJAAsAAAAPAA8AAAAJAAwAAAAPABAAAAAKAP//AAAQAAMAAAAKAAAAAAAQAAQAAAAKAAEAAAAQAAUAAAAKAAIAAAAQAAYAAAAKAAMAAAAQAAcAAAAKAAUAAAAQAAkAAAAKAAYAAAAQAAoAAAAKAAcAAAAQAAsAAAAKAAgAAAAQAAwAAAAKAAkAAAAQAA0AAAAKAAoAAAAQAA4AAAAKAAsAAAAQAA8AAAAKAAwAAAAQABAAAAALAAAAAAARAAQAAAALAAEAAAARAAUAAAAMAAUAAAASAAkAAAAMAAYAAAASAAoAAAAMAAgAAAASAAwAAAAMAAkAAAASAA0AAAAMAAsAAAASAA8AAAAMAAwAAAASABAAAAANAAUAAAATAAkAAAANAAYAAAATAAoAAAANAAgAAAATAAwAAAANAAkAAAATAA0AAAANAAsAAAATAA8AAAANAAwAAAATABAAAAAOAAUAAAAUAAkAAAAOAAYAAAAUAAoAAAAOAAgAAAAUAAwAAAAOAAkAAAAUAA0AAAAOAAsAAAAUAA8AAAAOAAwAAAAUABAAAAAPAP7/AAAVAAIAAAAPAP//AAAVAAMAAAAPAAAAAAAVAAQAAAAPAAEAAAAVAAUAAAA=")
-tile_set = SubResource("TileSet_4h4rf")
-
 [node name="player" parent="." instance=ExtResource("1_2qniy")]
-position = Vector2(-2066, -178)
+position = Vector2(-623, -17.0001)
 scale = Vector2(0.72, 0.72)
 move_speed = 900.0
 floor_friction = 0.75
@@ -59,6 +44,7 @@ editor_draw_drag_margin = true
 offset_left = -23.615
 offset_right = -23.615
 scale = Vector2(1.06, 1.06)
+metadata/_edit_use_anchors_ = true
 
 [node name="cards" parent="player/Camera2D/CanvasLayer" instance=ExtResource("2_jv6wh")]
 position = Vector2(592, 532)
@@ -72,6 +58,7 @@ offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
 script = ExtResource("4_maf8m")
 Max_charges = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="health bar" parent="player/Camera2D/CanvasLayer" instance=ExtResource("3_x6ack")]
 offset_left = 373.0
@@ -81,6 +68,7 @@ offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
 script = ExtResource("4_iacmt")
 max_health = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="score" type="Label" parent="player/Camera2D/CanvasLayer"]
 offset_left = 19.0
@@ -90,18 +78,7 @@ offset_bottom = 635.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_cplwi")
 script = ExtResource("7_m1efj")
-
-[node name="Ground" type="AnimatableBody2D" parent="."]
-position = Vector2(0, 180)
-physics_material_override = SubResource("PhysicsMaterial_6l7je")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-visible = false
-shape = SubResource("WorldBoundaryShape2D_ou7uo")
-
-[node name="Position Reference" type="Sprite2D" parent="."]
-position = Vector2(300, 0)
-texture = ExtResource("2_mgkiw")
+metadata/_edit_use_anchors_ = true
 
 [node name="coins" type="Node" parent="."]
 
