@@ -31,7 +31,7 @@ func retract():
 
 func handle_grapple(delta):
 	var target_dir = player.global_position.direction_to(target)
-	var target_distance = player.global_position.direction_to(target)
+	var target_distance = player.global_position.distance_to(target)
 	var displacement = target_distance - rest_lenght
 	var force = Vector2.ZERO
 	
