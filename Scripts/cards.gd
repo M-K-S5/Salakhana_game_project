@@ -1,10 +1,15 @@
 extends Node2D
-# cards: number and currently selected card
-@export var  Selected : int
-#var cards_number = [1,2,3]
+
+@export var Selected : int
 var current_card = Selected
 
 @onready var anim_card: AnimatedSprite2D = $AnimatedSprite2D
+@onready var anim_card2: AnimatedSprite2D = $AnimatedSprite2D2 
 
-func _Pychics_Process():
-	pass
+func _ready():
+	anim_card.play("default")  
+	anim_card2.play(anim_card.animation)  
+
+func _process(_delta):
+	if anim_card2.animation != anim_card.animation:
+		anim_card2.play(anim_card.animation)
