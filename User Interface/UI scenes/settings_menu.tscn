@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://1aol0y2iqmpn"]
 
-[ext_resource type="Script" uid="uid://ba4l3lqroce22" path="res://User Interface/UI scenes/settings_menu.gd" id="1_6skcr"]
+[ext_resource type="Script" path="res://User Interface/UI scenes/settings_menu.gd" id="1_6skcr"]
 [ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_j2wop"]
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="2_cacl6"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="3_jn0lj"]
@@ -55,18 +55,18 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ssvce")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1ckr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2w7t"]
-bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+bg_color = Color(0.631373, 0.105882, 0.192157, 1)
 border_width_left = 15
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.105882, 0.0862745, 0.0705882, 1)
+border_color = Color(0.227451, 0.0352941, 0.0666667, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 1
-shadow_color = Color(0.891172, 0.535061, 7.70092e-07, 0.6)
+shadow_color = Color(0.776471, 0.156863, 0.254902, 0.435294)
 shadow_size = 2
 shadow_offset = Vector2(2, 1.655)
 
@@ -105,18 +105,18 @@ shadow_offset = Vector2(2.655, 3.75)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh76u"]
 content_margin_right = 29.0
 content_margin_bottom = 14.0
-bg_color = Color(0.282353, 0.113725, 0.113725, 1)
+bg_color = Color(0.631373, 0.105882, 0.192157, 1)
 border_width_left = 5
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.106438, 0.0871151, 0.0722307, 1)
+border_color = Color(0.227451, 0.0352941, 0.0666667, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_detail = 1
-shadow_color = Color(0.984961, 0.610097, 1.92523e-06, 0.6)
-shadow_size = 3
+shadow_color = Color(0.776471, 0.156863, 0.254902, 0.435294)
+shadow_size = 20
 shadow_offset = Vector2(2.655, 3.75)
 
 [sub_resource type="Theme" id="Theme_2i1d2"]
