@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://lnsbmvrsxl5e"]
+[gd_scene load_steps=74 format=3 uid="uid://lnsbmvrsxl5e"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_vtkp8"]
 [ext_resource type="Texture2D" uid="uid://dbc51e3bqlde8" path="res://Sprites/map assets/decorations/fence_1.png" id="2_rg57b"]
@@ -25,7 +25,6 @@
 [ext_resource type="FontFile" uid="uid://cbf5nsdsenwpy" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="24_tuwt4"]
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="25_tuwt4"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="26_ajvq6"]
-[ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="27_cwq17"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="28_a0h6a"]
 [ext_resource type="Script" path="res://Scripts/charge.gd" id="29_wcnou"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="30_1xwpj"]
@@ -19460,10 +19459,6 @@ offset_left = -23.615
 offset_right = -23.615
 scale = Vector2(1.06, 1.06)
 metadata/_edit_use_anchors_ = true
-
-[node name="cards" parent="player/Camera2D/CanvasLayer" instance=ExtResource("27_cwq17")]
-position = Vector2(592, 532)
-scale = Vector2(0.5, 0.5)
 
 [node name="charge" parent="player/Camera2D/CanvasLayer" instance=ExtResource("28_a0h6a")]
 offset_left = 373.0
