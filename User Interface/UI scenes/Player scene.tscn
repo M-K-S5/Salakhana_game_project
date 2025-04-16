@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bfrvt6768ml8x"]
 
-[ext_resource type="Script" path="res://User Interface/UI scenes/player_sceneScript.gd" id="1_mqmux"]
-[ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
+[ext_resource type="Script" uid="uid://xsd4w1g3oaac" path="res://User Interface/UI scenes/player_sceneScript.gd" id="1_mqmux"]
+[ext_resource type="Shader" uid="uid://vkj1hr1fy681" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
 [ext_resource type="Texture2D" uid="uid://cvplqjquad7ax" path="res://User Interface/UI resources/Player UI/Simple page.png" id="2_bf81c"]
 [ext_resource type="Texture2D" uid="uid://cqtyemcgl5jgw" path="res://User Interface/UI resources/Player UI/dash card not full.png" id="3_w1ixj"]
 [ext_resource type="Texture2D" uid="uid://b41k5myvsxbve" path="res://User Interface/UI resources/Player UI/dash card full.png" id="4_tr58k"]
