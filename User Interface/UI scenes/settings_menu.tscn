@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://1aol0y2iqmpn"]
 
-[ext_resource type="Script" path="res://User Interface/UI scenes/settings_menu.gd" id="1_6skcr"]
+[ext_resource type="Script" uid="uid://ba4l3lqroce22" path="res://User Interface/UI scenes/settings_menu.gd" id="1_6skcr"]
 [ext_resource type="Texture2D" uid="uid://3f4sdhet0x1o" path="res://User Interface/UI resources/sckechy back ground.jpg" id="1_j2wop"]
 [ext_resource type="Texture2D" uid="uid://c1a5y1l6v06i1" path="res://User Interface/UI resources/background.png" id="2_cacl6"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="3_jn0lj"]
