@@ -32,7 +32,6 @@ const DACC = 0.1
 @onready var friction_coeff:float = acceleration / move_speed
 @onready var external_force:float = 0
 
-@onready var cards: Node2D = $Camera2D/CanvasLayer/cards
 
 var direction := Input.get_axis("move_Left", "move_Right")
 
@@ -109,19 +108,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump") && can_jump :
 		jump()
-# card swithcing
-	if Input.is_action_just_pressed("card_1"):
-		cards.anim_card.play("left_cards")
-		cards.Selected = 1
-		print(cards.Selected)
-	if Input.is_action_just_pressed("card_2"):
-		cards.anim_card.play("default")
-		cards.Selected = 2
-		print(cards.Selected)
-	if Input.is_action_just_pressed("card_3"):
-		cards.anim_card.play("Right_cards")
-		cards.Selected = 3
-		print(cards.Selected)
+
 
 
 	# Get the input direction and handle the movement/deceleration.

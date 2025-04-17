@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfrvt6768ml8x"]
+[gd_scene load_steps=16 format=3 uid="uid://bfrvt6768ml8x"]
 
 [ext_resource type="Script" path="res://User Interface/UI scenes/player_sceneScript.gd" id="1_mqmux"]
 [ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
 [ext_resource type="Texture2D" uid="uid://cvplqjquad7ax" path="res://User Interface/UI resources/Player UI/Simple page.png" id="2_bf81c"]
+[ext_resource type="Texture2D" uid="uid://cwen1bqnhfcr4" path="res://User Interface/UI resources/Player UI/Simple page white.png" id="3_34d2f"]
 [ext_resource type="Texture2D" uid="uid://cqtyemcgl5jgw" path="res://User Interface/UI resources/Player UI/dash card not full.png" id="3_w1ixj"]
 [ext_resource type="Texture2D" uid="uid://b41k5myvsxbve" path="res://User Interface/UI resources/Player UI/dash card full.png" id="4_tr58k"]
 [ext_resource type="Texture2D" uid="uid://b86hi63eerruc" path="res://User Interface/UI resources/Player UI/dash card caps.png" id="5_40m5r"]
@@ -10,23 +11,25 @@
 [ext_resource type="Texture2D" uid="uid://dhbvf1gd1ay8k" path="res://User Interface/UI resources/Player UI/heal card full.png" id="7_tcatu"]
 [ext_resource type="Texture2D" uid="uid://lsygnu187ndo" path="res://User Interface/UI resources/Player UI/heal card caps.png" id="8_8pnnd"]
 
-[sub_resource type="Gradient" id="Gradient_v8fnk"]
+[sub_resource type="Gradient" id="Gradient_2f1yr"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gcr0s"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4qtpv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q424s"]
-invert = true
-generate_mipmaps = false
-seamless = true
-seamless_blend_skirt = 0.125
-color_ramp = SubResource("Gradient_v8fnk")
-noise = SubResource("FastNoiseLite_gcr0s")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mp8u2"]
+color_ramp = SubResource("Gradient_2f1yr")
+noise = SubResource("FastNoiseLite_4qtpv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nck4r"]
 shader = ExtResource("1_qwnk5")
-shader_parameter/speed = 3.0
-shader_parameter/intensity = 0.03
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_q424s")
+shader_parameter/speed = 1.0
+shader_parameter/intensity = 0.06
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_mp8u2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1umb1"]
+shader = ExtResource("1_qwnk5")
+shader_parameter/speed = -3.34
+shader_parameter/intensity = -0.02
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_mp8u2")
 
 [node name="PlayerScene" type="Control"]
 layout_mode = 3
@@ -39,6 +42,21 @@ script = ExtResource("1_mqmux")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_nck4r")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.027
+anchor_right = 1.023
+anchor_bottom = 1.007
+offset_left = 0.104
+offset_right = 0.504028
+offset_bottom = 27.4639
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.959798)
+texture = ExtResource("3_34d2f")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1umb1")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.027

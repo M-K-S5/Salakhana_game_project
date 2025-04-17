@@ -17,7 +17,7 @@ func _process(delta):
 	$Dash_cooldown.set_value_no_signal(CDValueD - time_left_Dash)
 	$Health_cooldown.set_value_no_signal(CDValueH - time_left_health)
 	
-	if Input.is_action_just_pressed("dash") and GameData.dashisreadyd:
+	if Input.is_action_just_pressed("dash") and GameData.dashisready:
 		GameData.dashisready = false
 		$"Dash_cooldown/TimerD".start()
 		print ("dash done-----------------")

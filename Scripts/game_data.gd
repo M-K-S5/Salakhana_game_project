@@ -3,7 +3,7 @@ var coins = 0
 var score = 0 
 
 #-------------hzm added this-------------#
-var health  : int = 3
+var health = 3
 var charges : int = 3
 
 	#----------cooldowns
