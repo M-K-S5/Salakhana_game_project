@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://umb84gecqsma"]
+[gd_scene load_steps=74 format=3 uid="uid://umb84gecqsma"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_vtkp8"]
 [ext_resource type="Texture2D" uid="uid://dbc51e3bqlde8" path="res://Sprites/map assets/decorations/fence_1.png" id="2_rg57b"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="30_1xwpj"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="32_gg4i5"]
 [ext_resource type="Script" path="res://Scripts/score.gd" id="33_natfk"]
+[ext_resource type="AudioStream" uid="uid://dpb3dl3svf77s" path="res://Scenes/Wind Sound SOUND EFFECT - No Copyright[Download Free].mp3" id="33_sphuk"]
 
 [sub_resource type="GDScript" id="GDScript_vtkp8"]
 
@@ -26204,5 +26205,9 @@ text = "Gold: 0"
 label_settings = SubResource("LabelSettings_ak4ow")
 script = ExtResource("33_natfk")
 metadata/_edit_use_anchors_ = true
+
+[node name="WindSoundSoundEffect-NoCopyright[downloadFree]" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_sphuk")
+autoplay = true
 
 [connection signal="area_entered" from="ENDPOINT" to="ENDPOINT" method="_on_area_entered"]
