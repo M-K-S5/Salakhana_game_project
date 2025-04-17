@@ -64,15 +64,15 @@ offset_top = 0.303986
 offset_right = -1.52588e-05
 offset_bottom = -0.320007
 grow_vertical = 2
-max_value = 2.0
-step = 0.3
+max_value = 3.0
+step = 0.1
 value = 2.0
 fill_mode = 3
 texture_under = ExtResource("3_w1ixj")
 texture_progress = ExtResource("4_tr58k")
 
 [node name="TimerD" type="Timer" parent="Dash_cooldown"]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="TextureRect2" type="TextureRect" parent="Dash_cooldown"]
 layout_mode = 1
@@ -124,3 +124,6 @@ offset_bottom = 0.0399933
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_8pnnd")
+
+[connection signal="timeout" from="Dash_cooldown/TimerD" to="." method="_on_timer_d_timeout"]
+[connection signal="timeout" from="Health_cooldown/TimerH" to="." method="_on_timer_h_timeout"]

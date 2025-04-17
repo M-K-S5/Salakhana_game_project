@@ -9,6 +9,7 @@ extends CharacterBody2D
 const ACC = 0.1
 const DACC = 0.1
 
+
 @export_category("Movement")
 @export var move_speed = 2500.0
 @export var acceleration = 450.0
@@ -103,7 +104,8 @@ func _physics_process(delta: float) -> void:
 		can_dash = false
 
 	if Input.is_action_just_pressed("dash") && can_dash:
-		dash()
+		if GameData.dashisready :
+			dash()
 	
 	if Input.is_action_just_pressed("jump") && can_jump :
 		jump()

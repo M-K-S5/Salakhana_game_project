@@ -30,7 +30,8 @@ version_control/autoload_on_startup=true
 folder_colors={
 "res://Assets/": "blue",
 "res://Scenes/": "purple",
-"res://Scripts/": "orange"
+"res://Scripts/": "orange",
+"res://User Interface/": "green"
 }
 
 [global_group]

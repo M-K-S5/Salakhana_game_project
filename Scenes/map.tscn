@@ -26132,7 +26132,7 @@ position = Vector2(-90.5, -104)
 shape = SubResource("RectangleShape2D_fg7i4")
 
 [node name="danger zone" parent="." instance=ExtResource("22_macow")]
-position = Vector2(1495, 427)
+position = Vector2(1543, 2836)
 scale = Vector2(0.52, 0.52)
 
 [node name="ENDPOINT" type="Area2D" parent="."]
