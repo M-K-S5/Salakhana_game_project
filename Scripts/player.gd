@@ -62,14 +62,12 @@ func get_var_gravity():
 		gravity = fall_gravity
 
 func jump():
-	if GameData.isThereACharge == true: # hzm added this
-		velocity.y = jump_velocity
-		if not GameData.charges <= 0: # hzm added this
-			if not is_on_floor():
-				charge.use_charge()
-				print("Mid-Air Jump")
-			else:
-				print("Jump")
+	velocity.y = jump_velocity
+	if not is_on_floor():
+		charge.use_charge()
+		print("Mid-Air Jump")
+	else:
+		print("Jump")
 
 func dash():
 	if GameData.isThereACharge == true: # hzm added this
@@ -117,8 +115,7 @@ func _physics_process(delta: float) -> void:
 				dash()
 	
 	if Input.is_action_just_pressed("jump") && can_jump :
-		if GameData.isThereACharge == true: # hzm added this
-			jump()
+		jump()
 
 
 

@@ -26173,6 +26173,10 @@ editor_draw_drag_margin = true
 [node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
 
 [node name="PlayerScene" parent="player/Camera2D/CanvasLayer" instance=ExtResource("26_ajvq6")]
+offset_left = 37.0
+offset_top = 21.0
+offset_right = 37.0
+offset_bottom = 21.0
 scale = Vector2(1.02088, 1.02088)
 
 [node name="charge" parent="player/Camera2D/CanvasLayer" instance=ExtResource("28_a0h6a")]

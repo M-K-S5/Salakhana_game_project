@@ -1,6 +1,8 @@
 extends Control
 
 #-- definitions :
+@onready var map: Node2D = $"../../../.."
+@onready var health_bar_fMAp: TextureProgressBar = $"../health bar"
 
 #---
 var CDValueD : int = 3
@@ -25,6 +27,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("healPotion") and GameData.potionisready:
 		GameData.potionisready = false
+		health_bar_fMAp.current_health += 1 
 		$"Health_cooldown/TimerH".start()
 		print ("heal done---------------")
 		
