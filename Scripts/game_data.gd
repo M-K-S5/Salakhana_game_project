@@ -6,6 +6,7 @@ var score = 0
 #-------------hzm added this-------------#
 var health = 3
 var charges : int = 3
+var isThereACharge :bool = true
 
 	#----------cooldowns
 var dashisready : bool = true

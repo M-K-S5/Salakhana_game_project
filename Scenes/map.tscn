@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://umb84gecqsma"]
+[gd_scene load_steps=73 format=3 uid="uid://umb84gecqsma"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_vtkp8"]
 [ext_resource type="Texture2D" uid="uid://dbc51e3bqlde8" path="res://Sprites/map assets/decorations/fence_1.png" id="2_rg57b"]
@@ -29,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="25_tuwt4"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="26_ajvq6"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="28_a0h6a"]
-[ext_resource type="Script" path="res://Scripts/charge.gd" id="29_wcnou"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="30_1xwpj"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="32_gg4i5"]
 [ext_resource type="Script" path="res://Scripts/score.gd" id="33_natfk"]
@@ -26186,8 +26185,6 @@ offset_top = 488.0
 offset_right = 925.0
 offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
-script = ExtResource("29_wcnou")
-Max_charges = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="health bar" parent="player/Camera2D/CanvasLayer" instance=ExtResource("30_1xwpj")]

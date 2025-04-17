@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://d087el1ow6rki"]
 
-[ext_resource type="Shader" uid="uid://vkj1hr1fy681" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_r4p8f"]
+[ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_r4p8f"]
 [ext_resource type="Texture2D" uid="uid://0mul2jxkkuj4" path="res://User Interface/UI resources/Player UI/stamina par not full.png" id="1_vwjch"]
 [ext_resource type="Texture2D" uid="uid://c2t7l88p52yu5" path="res://User Interface/UI resources/Player UI/stamina par full.png" id="2_rjixe"]
-[ext_resource type="Script" uid="uid://cuomchll4w2jr" path="res://Scripts/charge_bar.gd" id="3_q51uj"]
+[ext_resource type="Script" path="res://Scripts/charge.gd" id="4_bscxq"]
 
 [sub_resource type="Gradient" id="Gradient_fnpw2"]
 
@@ -35,4 +35,4 @@ radial_fill_degrees = 180.0
 radial_center_offset = Vector2(0, 84)
 texture_under = ExtResource("1_vwjch")
 texture_progress = ExtResource("2_rjixe")
-script = ExtResource("3_q51uj")
+script = ExtResource("4_bscxq")

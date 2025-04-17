@@ -7,9 +7,16 @@ extends TextureProgressBar
 var current_charge = 3
 
 func use_charge():
-	current_charge -= 1
-	print("charges left " + str(current_charge))
+	if not current_charge <= 0:
+		current_charge -= 1
+		print("charges left " + str(current_charge))
+		GameData.charges = current_charge
 
 func _physics_process(_delta: float) -> void:
-	if player.is_on_floor():
-		current_charge = Max_charges
+	if current_charge <= 1:
+		GameData.isThereACharge = true
+	else :
+		GameData.isThereACharge = false
+	
+	$".".set_value_no_signal(GameData.charges)
+	GameData.charges = current_charge
