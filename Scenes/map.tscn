@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://umb84gecqsma"]
+[gd_scene load_steps=75 format=3 uid="uid://umb84gecqsma"]
 
 [ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="1_vtkp8"]
 [ext_resource type="Texture2D" uid="uid://dbc51e3bqlde8" path="res://Sprites/map assets/decorations/fence_1.png" id="2_rg57b"]
@@ -23,18 +23,17 @@
 [ext_resource type="PackedScene" uid="uid://cntkhqa8iqiu3" path="res://Scenes/enemy_i.tscn" id="17_wcnou"]
 [ext_resource type="PackedScene" uid="uid://clhqa0csd7g3t" path="res://Scenes/fence.tscn" id="19_pmuo0"]
 [ext_resource type="PackedScene" uid="uid://cqlahd6bcxd77" path="res://Scenes/moving_platforms.tscn" id="20_gg4i5"]
-[ext_resource type="Script" uid="uid://c3nfb536gpa48" path="res://Scripts/endpoint.gd" id="22_ak4ow"]
+[ext_resource type="Script" path="res://Scripts/endpoint.gd" id="22_ak4ow"]
 [ext_resource type="PackedScene" uid="uid://cxodvv5cljt8b" path="res://Scenes/danger_zone.tscn" id="22_macow"]
 [ext_resource type="FontFile" uid="uid://cbf5nsdsenwpy" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="24_tuwt4"]
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="25_tuwt4"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="26_ajvq6"]
-[ext_resource type="PackedScene" uid="uid://duoxg0yfh8p0f" path="res://Scenes/cards.tscn" id="27_cwq17"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="28_a0h6a"]
-[ext_resource type="Script" uid="uid://bytg8s45pkp8q" path="res://Scripts/charge.gd" id="29_wcnou"]
+[ext_resource type="Script" path="res://Scripts/charge.gd" id="29_wcnou"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="30_1xwpj"]
-[ext_resource type="Script" uid="uid://opoxanq5yueo" path="res://Scripts/health_bar.gd" id="31_pmuo0"]
+[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="31_pmuo0"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="32_gg4i5"]
-[ext_resource type="Script" uid="uid://rfcay2hwr7k" path="res://Scripts/score.gd" id="33_natfk"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="33_natfk"]
 
 [sub_resource type="GDScript" id="GDScript_vtkp8"]
 
@@ -25838,8 +25837,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie368"]
 _data = {
-&"RESET": SubResource("Animation_5qtum"),
-&"trap": SubResource("Animation_q6lx1")
+"RESET": SubResource("Animation_5qtum"),
+"trap": SubResource("Animation_q6lx1")
 }
 
 [sub_resource type="Animation" id="Animation_fls3e"]
@@ -25875,8 +25874,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63oc"]
 _data = {
-&"RESET": SubResource("Animation_fls3e"),
-&"trap": SubResource("Animation_x5dfk")
+"RESET": SubResource("Animation_fls3e"),
+"trap": SubResource("Animation_x5dfk")
 }
 
 [sub_resource type="Animation" id="Animation_uus22"]
@@ -25913,8 +25912,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuwt4"]
 _data = {
-&"RESET": SubResource("Animation_uus22"),
-&"trap": SubResource("Animation_ltf6m")
+"RESET": SubResource("Animation_uus22"),
+"trap": SubResource("Animation_ltf6m")
 }
 
 [sub_resource type="Animation" id="Animation_2ooml"]
@@ -25950,8 +25949,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p20hg"]
 _data = {
-&"RESET": SubResource("Animation_2ooml"),
-&"move": SubResource("Animation_hvaui")
+"RESET": SubResource("Animation_2ooml"),
+"move": SubResource("Animation_hvaui")
 }
 
 [sub_resource type="Animation" id="Animation_tuwt4"]
@@ -25987,8 +25986,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ye5v"]
 _data = {
-&"RESET": SubResource("Animation_tuwt4"),
-&"move": SubResource("Animation_macow")
+"RESET": SubResource("Animation_tuwt4"),
+"move": SubResource("Animation_macow")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
@@ -26074,7 +26073,7 @@ scale = Vector2(1.62091, 1.56347)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence"]
 libraries = {
-&"": SubResource("AnimationLibrary_ie368")
+"": SubResource("AnimationLibrary_ie368")
 }
 autoplay = "trap"
 
@@ -26084,7 +26083,7 @@ scale = Vector2(1.36648, 1.28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence2"]
 libraries = {
-&"": SubResource("AnimationLibrary_k63oc")
+"": SubResource("AnimationLibrary_k63oc")
 }
 autoplay = "trap"
 
@@ -26095,7 +26094,7 @@ scale = Vector2(1.63998, 1.63998)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence3"]
 root_node = NodePath("../../fence3")
 libraries = {
-&"": SubResource("AnimationLibrary_tuwt4")
+"": SubResource("AnimationLibrary_tuwt4")
 }
 autoplay = "trap"
 
@@ -26106,7 +26105,7 @@ position = Vector2(823, -145)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms2"]
 libraries = {
-&"": SubResource("AnimationLibrary_p20hg")
+"": SubResource("AnimationLibrary_p20hg")
 }
 autoplay = "move"
 
@@ -26116,7 +26115,7 @@ position = Vector2(1244, -162)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms4"]
 root_node = NodePath("../../moving platforms4")
 libraries = {
-&"": SubResource("AnimationLibrary_1ye5v")
+"": SubResource("AnimationLibrary_1ye5v")
 }
 autoplay = "move"
 
@@ -26154,7 +26153,7 @@ theme_override_font_sizes/font_size = 44
 text = "YOU WIN !!"
 
 [node name="player" parent="." instance=ExtResource("25_tuwt4")]
-position = Vector2(-860, -30)
+position = Vector2(-691, 62)
 scale = Vector2(0.72, 0.72)
 move_speed = 900.0
 floor_friction = 0.75
@@ -26163,6 +26162,7 @@ jump_time_to_peak = 0.35
 dash_force = 175.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+offset = Vector2(-310.38, -9.15)
 zoom = Vector2(1.515, 1.515)
 position_smoothing_enabled = true
 drag_horizontal_offset = 1.0
@@ -26179,10 +26179,6 @@ offset_left = -23.615
 offset_right = -23.615
 scale = Vector2(1.06, 1.06)
 metadata/_edit_use_anchors_ = true
-
-[node name="cards" parent="player/Camera2D/CanvasLayer" instance=ExtResource("27_cwq17")]
-position = Vector2(592, 532)
-scale = Vector2(0.5, 0.5)
 
 [node name="charge" parent="player/Camera2D/CanvasLayer" instance=ExtResource("28_a0h6a")]
 offset_left = 373.0
@@ -26206,10 +26202,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="score" type="Label" parent="player/Camera2D/CanvasLayer"]
 offset_left = 19.0
-offset_top = 566.0
+offset_top = 564.0
 offset_right = 218.0
-offset_bottom = 635.0
-text = "Score: 0"
+offset_bottom = 633.0
+text = "Gold: 0"
 label_settings = SubResource("LabelSettings_ak4ow")
 script = ExtResource("33_natfk")
 metadata/_edit_use_anchors_ = true

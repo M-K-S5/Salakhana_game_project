@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bfrvt6768ml8x"]
 
-[ext_resource type="Script" uid="uid://xsd4w1g3oaac" path="res://User Interface/UI scenes/player_sceneScript.gd" id="1_mqmux"]
-[ext_resource type="Shader" uid="uid://vkj1hr1fy681" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
+[ext_resource type="Script" path="res://User Interface/UI scenes/player_sceneScript.gd" id="1_mqmux"]
+[ext_resource type="Shader" path="res://User Interface/UI scenes/Player sceneShader.gdshader" id="1_qwnk5"]
 [ext_resource type="Texture2D" uid="uid://cvplqjquad7ax" path="res://User Interface/UI resources/Player UI/Simple page.png" id="2_bf81c"]
 [ext_resource type="Texture2D" uid="uid://cqtyemcgl5jgw" path="res://User Interface/UI resources/Player UI/dash card not full.png" id="3_w1ixj"]
 [ext_resource type="Texture2D" uid="uid://b41k5myvsxbve" path="res://User Interface/UI resources/Player UI/dash card full.png" id="4_tr58k"]
@@ -52,7 +52,7 @@ grow_vertical = 2
 scale = Vector2(1, 0.959798)
 texture = ExtResource("2_bf81c")
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+[node name="Dash_cooldown" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.023
@@ -64,12 +64,17 @@ offset_top = 0.303986
 offset_right = -1.52588e-05
 offset_bottom = -0.320007
 grow_vertical = 2
-value = 47.0
+max_value = 2.0
+step = 0.3
+value = 2.0
 fill_mode = 3
 texture_under = ExtResource("3_w1ixj")
 texture_progress = ExtResource("4_tr58k")
 
-[node name="TextureRect2" type="TextureRect" parent="TextureProgressBar2"]
+[node name="TimerD" type="Timer" parent="Dash_cooldown"]
+wait_time = 2.0
+
+[node name="TextureRect2" type="TextureRect" parent="Dash_cooldown"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.013
@@ -85,7 +90,7 @@ grow_vertical = 2
 scale = Vector2(1.01777, 1.01777)
 texture = ExtResource("5_40m5r")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="Health_cooldown" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.023
@@ -97,12 +102,16 @@ offset_top = 42.38
 offset_right = 3.60799
 offset_bottom = 42.7
 grow_vertical = 2
-value = 47.0
+max_value = 15.0
+value = 15.0
 fill_mode = 3
 texture_under = ExtResource("6_u1dmg")
 texture_progress = ExtResource("7_tcatu")
 
-[node name="TextureRect3" type="TextureRect" parent="TextureProgressBar"]
+[node name="TimerH" type="Timer" parent="Health_cooldown"]
+wait_time = 15.0
+
+[node name="TextureRect3" type="TextureRect" parent="Health_cooldown"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.009
