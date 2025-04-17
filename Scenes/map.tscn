@@ -26152,7 +26152,11 @@ theme_override_font_sizes/font_size = 44
 text = "YOU WIN !!"
 
 [node name="player" parent="." instance=ExtResource("25_tuwt4")]
+<<<<<<< Updated upstream
 position = Vector2(-691, 62)
+=======
+position = Vector2(-667, 98)
+>>>>>>> Stashed changes
 scale = Vector2(0.72, 0.72)
 move_speed = 900.0
 floor_friction = 0.75

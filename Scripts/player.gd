@@ -18,7 +18,7 @@ const DACC = 0.1
 @export_category("Jump")
 @export var jump_charges_max:int = 2
 @onready var jump_charges = jump_charges_max
-@onready var jump_velocity = ((2 * jump_height) / jump_time_to_peak) * -1
+@onready var jump_velocity = ((1 * jump_height) / jump_time_to_peak) * -1
 @export var jump_height:float = 50
 @export var jump_time_to_peak:float = 0.5
 @export var jump_time_to_descend:float = 0.25
