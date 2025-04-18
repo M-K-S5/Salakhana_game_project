@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4an2ci0pcch8"]
+
+[ext_resource type="Script" uid="uid://dpm3m8m3d78hv" path="res://Scripts/one_way_platform.gd" id="1_dx72e"]
+[ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="2_n3204"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poi4u"]
+size = Vector2(100, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vfv1"]
+size = Vector2(96, 7)
+
+[node name="one way platform" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_dx72e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("2_n3204")
+region_enabled = true
+region_rect = Rect2(0, 0, 99, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_poi4u")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -13)
+shape = SubResource("RectangleShape2D_3vfv1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

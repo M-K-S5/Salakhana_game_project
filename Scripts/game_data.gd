@@ -1,6 +1,7 @@
 extends Node
 var coins = 0
 var score = 0 
+var gems = 0
 
 
 #-------------hzm added this-------------#
