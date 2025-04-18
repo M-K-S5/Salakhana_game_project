@@ -34,14 +34,14 @@
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="25_tuwt4"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="26_ajvq6"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="28_a0h6a"]
-[ext_resource type="PackedScene" path="res://Scenes/fail_trap.tscn" id="29_xvpjn"]
+[ext_resource type="PackedScene" uid="uid://bc5etd4gfbfye" path="res://Scenes/fail_trap.tscn" id="29_xvpjn"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="30_1xwpj"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="32_gg4i5"]
-[ext_resource type="Script" uid="uid://rfcay2hwr7k" path="res://Scripts/score.gd" id="33_natfk"]
-[ext_resource type="AudioStream" uid="uid://dpb3dl3svf77s" path="res://Scenes/Wind Sound SOUND EFFECT - No Copyright[Download Free].mp3" id="33_sphuk"]
-[ext_resource type="PackedScene" path="res://Scenes/trap.tscn" id="42_pwqop"]
-[ext_resource type="PackedScene" path="res://Scenes/falling_rock.tscn" id="44_n3g5y"]
-[ext_resource type="PackedScene" path="res://Scenes/chest.tscn" id="45_mjs32"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="33_natfk"]
+[ext_resource type="PackedScene" uid="uid://dmk8snc063ub5" path="res://Scenes/trap.tscn" id="42_pwqop"]
+[ext_resource type="AudioStream" uid="uid://d0hvcnlvmiwmv" path="res://User Interface/UI resources/videoplayback (13).mp3" id="43_fjngo"]
+[ext_resource type="PackedScene" uid="uid://bi8iv1pt47jjj" path="res://Scenes/falling_rock.tscn" id="44_n3g5y"]
+[ext_resource type="PackedScene" uid="uid://k8unr3gxmr7q" path="res://Scenes/chest.tscn" id="45_mjs32"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="45_ylraf"]
 
 [sub_resource type="GDScript" id="GDScript_vtkp8"]
@@ -32948,8 +32948,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie368"]
 _data = {
-&"RESET": SubResource("Animation_5qtum"),
-&"trap": SubResource("Animation_q6lx1")
+"RESET": SubResource("Animation_5qtum"),
+"trap": SubResource("Animation_q6lx1")
 }
 
 [sub_resource type="Animation" id="Animation_fls3e"]
@@ -32985,8 +32985,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63oc"]
 _data = {
-&"RESET": SubResource("Animation_fls3e"),
-&"trap": SubResource("Animation_x5dfk")
+"RESET": SubResource("Animation_fls3e"),
+"trap": SubResource("Animation_x5dfk")
 }
 
 [sub_resource type="Animation" id="Animation_uus22"]
@@ -33023,8 +33023,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuwt4"]
 _data = {
-&"RESET": SubResource("Animation_uus22"),
-&"trap": SubResource("Animation_ltf6m")
+"RESET": SubResource("Animation_uus22"),
+"trap": SubResource("Animation_ltf6m")
 }
 
 [sub_resource type="Animation" id="Animation_2ooml"]
@@ -33060,8 +33060,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p20hg"]
 _data = {
-&"RESET": SubResource("Animation_2ooml"),
-&"move": SubResource("Animation_hvaui")
+"RESET": SubResource("Animation_2ooml"),
+"move": SubResource("Animation_hvaui")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
@@ -33480,7 +33480,7 @@ scale = Vector2(1.62091, 1.56347)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence"]
 libraries = {
-&"": SubResource("AnimationLibrary_ie368")
+"": SubResource("AnimationLibrary_ie368")
 }
 autoplay = "trap"
 
@@ -33490,7 +33490,7 @@ scale = Vector2(1.36648, 1.28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence2"]
 libraries = {
-&"": SubResource("AnimationLibrary_k63oc")
+"": SubResource("AnimationLibrary_k63oc")
 }
 autoplay = "trap"
 
@@ -33501,7 +33501,7 @@ scale = Vector2(1.63998, 1.63998)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence3"]
 root_node = NodePath("../../fence3")
 libraries = {
-&"": SubResource("AnimationLibrary_tuwt4")
+"": SubResource("AnimationLibrary_tuwt4")
 }
 autoplay = "trap"
 
@@ -33512,7 +33512,7 @@ position = Vector2(779, -153)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms2"]
 libraries = {
-&"": SubResource("AnimationLibrary_p20hg")
+"": SubResource("AnimationLibrary_p20hg")
 }
 autoplay = "move"
 
@@ -33577,14 +33577,14 @@ scale = Vector2(0.52, 0.52)
 position = Vector2(-701, 88.9998)
 scale = Vector2(0.72, 0.72)
 move_speed = 900.0
+acceleration = 47.0
 floor_friction = 0.75
 jump_height = 450.0
 jump_time_to_peak = 0.35
 dash_force = 175.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-54.1667, 101.389)
-offset = Vector2(-310.38, -9.15)
+offset = Vector2(-299.455, -13.85)
 zoom = Vector2(1.515, 1.515)
 position_smoothing_enabled = true
 drag_horizontal_offset = 1.0
@@ -33632,5 +33632,5 @@ script = ExtResource("33_natfk")
 metadata/_edit_use_anchors_ = true
 
 [node name="WindSoundSoundEffect-NoCopyright[downloadFree]" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("33_sphuk")
+stream = ExtResource("43_fjngo")
 autoplay = true

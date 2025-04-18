@@ -31,5 +31,5 @@ Hzm to do list:
 		cards scripts ❌
 		cool down and charge script ✅
 		link health ✅
-		link charge 
+		link charge ✅
 		
