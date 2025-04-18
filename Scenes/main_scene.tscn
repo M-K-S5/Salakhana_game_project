@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://be10amr8b7ki1"]
+[gd_scene load_steps=9 format=3 uid="uid://be10amr8b7ki1"]
 
 [ext_resource type="PackedScene" uid="uid://fvipmtgkk5me" path="res://Scenes/player.tscn" id="1_2qniy"]
 [ext_resource type="PackedScene" uid="uid://d087el1ow6rki" path="res://Scenes/charge.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://ciowxru8jkqu1" path="res://Scenes/health_bar.tscn" id="3_x6ack"]
-[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="4_iacmt"]
-[ext_resource type="Script" path="res://Scripts/charge.gd" id="4_maf8m"]
-[ext_resource type="Script" path="res://Scripts/score.gd" id="7_m1efj"]
+[ext_resource type="Script" uid="uid://rfcay2hwr7k" path="res://Scripts/score.gd" id="7_m1efj"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="8_huasi"]
 [ext_resource type="FontFile" uid="uid://c7s3jasshh0vm" path="res://User Interface/UI resources/Mario-Kart-DS.ttf" id="9_l4edp"]
 [ext_resource type="PackedScene" uid="uid://bfrvt6768ml8x" path="res://User Interface/UI scenes/Player scene.tscn" id="9_vjsa8"]
@@ -51,8 +49,6 @@ offset_top = 488.0
 offset_right = 925.0
 offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
-script = ExtResource("4_maf8m")
-Max_charges = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="health bar" parent="player/Camera2D/CanvasLayer" instance=ExtResource("3_x6ack")]
@@ -61,8 +57,6 @@ offset_top = 488.0
 offset_right = 925.0
 offset_bottom = 792.0
 scale = Vector2(0.88, 0.88)
-script = ExtResource("4_iacmt")
-max_health = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Gold" type="Label" parent="player/Camera2D/CanvasLayer"]

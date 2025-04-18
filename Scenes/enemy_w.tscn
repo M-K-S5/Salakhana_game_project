@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b40etsi3ee31q"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_w.gd" id="1_5ntpt"]
+[ext_resource type="Script" uid="uid://butmjpmehipgv" path="res://Scripts/enemy_w.gd" id="1_5ntpt"]
 [ext_resource type="Texture2D" uid="uid://b7rhsqc7edhr2" path="res://Sprites/map assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Mob/Character 1.png" id="1_t3d2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_527ua"]
