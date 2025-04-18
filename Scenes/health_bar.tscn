@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c4nh1aipnetyg" path="res://User Interface/UI resources/Player UI/health par not full.png" id="1_mlepx"]
 [ext_resource type="Texture2D" uid="uid://dxndgfgy4h0iu" path="res://User Interface/UI resources/Player UI/health par full.png" id="2_s4ucb"]
 [ext_resource type="Texture2D" uid="uid://bp1kp7bh7g3j5" path="res://User Interface/UI resources/Player UI/health and stamina caps.png" id="3_mjmjd"]
-[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="3_vp1lt"]
+[ext_resource type="Script" uid="uid://opoxanq5yueo" path="res://Scripts/health_bar.gd" id="3_vp1lt"]
 
 [node name="health bar" type="TextureProgressBar"]
 offset_right = 40.0

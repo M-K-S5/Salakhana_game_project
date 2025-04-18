@@ -1,5 +1,5 @@
 extends Node2D
-@export var fall_speed: float = 1000.0
+@export var fall_speed: float = 600.0
 
 var falling: bool = false
 
