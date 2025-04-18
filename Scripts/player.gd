@@ -9,6 +9,7 @@ extends CharacterBody2D
 const ACC = 0.1
 const DACC = 0.1
 
+
 @export_category("Movement")
 @export var move_speed = 2500.0
 @export var acceleration = 450.0
@@ -17,7 +18,7 @@ const DACC = 0.1
 @export_category("Jump")
 @export var jump_charges_max:int = 2
 @onready var jump_charges = jump_charges_max
-@onready var jump_velocity = ((2 * jump_height) / jump_time_to_peak) * -1
+@onready var jump_velocity = ((1 * jump_height) / jump_time_to_peak) * -1
 @export var jump_height:float = 50
 @export var jump_time_to_peak:float = 0.5
 @export var jump_time_to_descend:float = 0.25
@@ -31,7 +32,6 @@ const DACC = 0.1
 @onready var friction_coeff:float = acceleration / move_speed
 @onready var external_force:float = 0
 
-@onready var cards: Node2D = $Camera2D/CanvasLayer/cards
 
 var direction := Input.get_axis("move_Left", "move_Right")
 
@@ -70,16 +70,23 @@ func jump():
 		print("Jump")
 
 func dash():
-	print("Dash")
-	dashing = true
-	velocity.y = 0
-	dash_speed = (dash_force * scale.y * 10)
-	charge.use_charge()
-	await $AnimatedSprite2D.animation_finished
-	dash_speed = 0
-	dashing = false
+	if GameData.isThereACharge == true: # hzm added this
+		print("Dash")
+		dashing = true
+		velocity.y = 0
+		dash_speed = (dash_force * scale.y * 10)
+		charge.use_charge()
+		await $AnimatedSprite2D.animation_finished
+		dash_speed = 0
+		dashing = false
 
 func _physics_process(delta: float) -> void:
+	
+	if is_on_floor() and GameData.charges < 3:
+		charge.current_charge = 3
+	else:
+		pass
+	
 	# Add the gravity.
 	friction = running_speed * friction_coeff * floor_friction
 	if not is_on_floor():
@@ -97,29 +104,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		can_jump = false
 	
-	if charge.current_charge > 0:
+	if charge.current_charge > 0 && not charge.current_charge ==0:
 		can_dash = true
 	else:
 		can_dash = false
 
 	if Input.is_action_just_pressed("dash") && can_dash:
-		dash()
+		if GameData.dashisready :  # hzm added this
+			if not GameData.charges <= 0: # hzm added this
+				dash()
 	
 	if Input.is_action_just_pressed("jump") && can_jump :
 		jump()
-# card swithcing
-	if Input.is_action_just_pressed("card_1"):
-		cards.anim_card.play("left_cards")
-		cards.Selected = 1
-		print(cards.Selected)
-	if Input.is_action_just_pressed("card_2"):
-		cards.anim_card.play("default")
-		cards.Selected = 2
-		print(cards.Selected)
-	if Input.is_action_just_pressed("card_3"):
-		cards.anim_card.play("Right_cards")
-		cards.Selected = 3
-		print(cards.Selected)
+
 
 
 	# Get the input direction and handle the movement/deceleration.

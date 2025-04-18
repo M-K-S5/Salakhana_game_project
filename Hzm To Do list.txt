@@ -25,9 +25,11 @@ Hzm to do list:
 
 		menu icon ✅
 	Ui code:
-		player ui script 
+		player ui script ✅
 		main menu script ✅
 		settings script ✅
-		cards scripts
-		cool down and charge script
+		cards scripts ❌
+		cool down and charge script ✅
+		link health ✅
+		link charge 
 		
