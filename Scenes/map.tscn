@@ -42,6 +42,9 @@
 [ext_resource type="PackedScene" uid="uid://d4an2ci0pcch8" path="res://Scenes/one_way_platform.tscn" id="37_n3g5y"]
 [ext_resource type="PackedScene" uid="uid://dmk8snc063ub5" path="res://Scenes/trap.tscn" id="42_pwqop"]
 [ext_resource type="PackedScene" uid="uid://c5tkvp1lvxm16" path="res://Scenes/entry_door.tscn" id="43_xvpjn"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="33_natfk"]
+[ext_resource type="PackedScene" uid="uid://dmk8snc063ub5" path="res://Scenes/trap.tscn" id="42_pwqop"]
+[ext_resource type="AudioStream" uid="uid://d0hvcnlvmiwmv" path="res://User Interface/UI resources/videoplayback (13).mp3" id="43_fjngo"]
 [ext_resource type="PackedScene" uid="uid://bi8iv1pt47jjj" path="res://Scenes/falling_rock.tscn" id="44_n3g5y"]
 [ext_resource type="PackedScene" uid="uid://k8unr3gxmr7q" path="res://Scenes/chest.tscn" id="45_mjs32"]
 [ext_resource type="PackedScene" uid="uid://dfhqhidu7xms7" path="res://Scenes/coin.tscn" id="45_ylraf"]
@@ -32968,8 +32971,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie368"]
 _data = {
-&"RESET": SubResource("Animation_5qtum"),
-&"trap": SubResource("Animation_q6lx1")
+"RESET": SubResource("Animation_5qtum"),
+"trap": SubResource("Animation_q6lx1")
 }
 
 [sub_resource type="Animation" id="Animation_fls3e"]
@@ -33005,8 +33008,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63oc"]
 _data = {
-&"RESET": SubResource("Animation_fls3e"),
-&"trap": SubResource("Animation_x5dfk")
+"RESET": SubResource("Animation_fls3e"),
+"trap": SubResource("Animation_x5dfk")
 }
 
 [sub_resource type="Animation" id="Animation_uus22"]
@@ -33043,8 +33046,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuwt4"]
 _data = {
-&"RESET": SubResource("Animation_uus22"),
-&"trap": SubResource("Animation_ltf6m")
+"RESET": SubResource("Animation_uus22"),
+"trap": SubResource("Animation_ltf6m")
 }
 
 [sub_resource type="Animation" id="Animation_2ooml"]
@@ -33080,8 +33083,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p20hg"]
 _data = {
-&"RESET": SubResource("Animation_2ooml"),
-&"move": SubResource("Animation_hvaui")
+"RESET": SubResource("Animation_2ooml"),
+"move": SubResource("Animation_hvaui")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_ak4ow"]
@@ -33517,7 +33520,7 @@ scale = Vector2(1.62091, 1.56347)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence"]
 libraries = {
-&"": SubResource("AnimationLibrary_ie368")
+"": SubResource("AnimationLibrary_ie368")
 }
 autoplay = "trap"
 
@@ -33527,7 +33530,7 @@ scale = Vector2(1.36648, 1.28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence2"]
 libraries = {
-&"": SubResource("AnimationLibrary_k63oc")
+"": SubResource("AnimationLibrary_k63oc")
 }
 autoplay = "trap"
 
@@ -33538,7 +33541,7 @@ scale = Vector2(1.63998, 1.63998)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fences/fence3"]
 root_node = NodePath("../../fence3")
 libraries = {
-&"": SubResource("AnimationLibrary_tuwt4")
+"": SubResource("AnimationLibrary_tuwt4")
 }
 autoplay = "trap"
 
@@ -33549,7 +33552,7 @@ position = Vector2(779, -153)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/moving platforms2"]
 libraries = {
-&"": SubResource("AnimationLibrary_p20hg")
+"": SubResource("AnimationLibrary_p20hg")
 }
 autoplay = "move"
 
@@ -33652,6 +33655,7 @@ scale = Vector2(1.4, 1.4)
 position = Vector2(-1064, 2117)
 scale = Vector2(0.72, 0.72)
 move_speed = 900.0
+acceleration = 47.0
 floor_friction = 0.75
 jump_height = 450.0
 jump_time_to_peak = 0.35
@@ -33707,5 +33711,5 @@ script = ExtResource("33_natfk")
 metadata/_edit_use_anchors_ = true
 
 [node name="WindSoundSoundEffect-NoCopyright[downloadFree]" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("33_sphuk")
+stream = ExtResource("43_fjngo")
 autoplay = true
