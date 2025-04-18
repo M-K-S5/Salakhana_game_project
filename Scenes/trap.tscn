@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmk8snc063ub5"]
+
+[ext_resource type="Script" uid="uid://bl5jck0524v5r" path="res://Scripts/trap.gd" id="1_xmcxk"]
+[ext_resource type="Texture2D" uid="uid://bnx2telntgssm" path="res://Sprites/map assets/Tile_set/oak_woods_tileset.png" id="2_8uao8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utgws"]
+size = Vector2(96, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1s4t"]
+size = Vector2(96, 5)
+
+[node name="trap" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_xmcxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_8uao8")
+region_enabled = true
+region_rect = Rect2(113, 0, 111, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6.5)
+shape = SubResource("RectangleShape2D_utgws")
+
+[node name="vanish" type="Timer" parent="."]
+
+[node name="trigger area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger area"]
+position = Vector2(-1, -18.5)
+shape = SubResource("RectangleShape2D_q1s4t")
+
+[connection signal="timeout" from="vanish" to="." method="_on_vanish_timeout"]
+[connection signal="body_entered" from="trigger area" to="." method="_on_trigger_area_body_entered"]

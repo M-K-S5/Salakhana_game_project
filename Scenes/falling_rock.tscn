@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi8iv1pt47jjj"]
+
+[ext_resource type="Script" uid="uid://bqkv5qwap2joi" path="res://Scripts/falling_rock.gd" id="1_cyyhn"]
+[ext_resource type="Texture2D" uid="uid://d3oes1w5l3wsf" path="res://Assets/map assets/PixelFantasy_Caves_1.0/props1.png" id="2_oux33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjyd8"]
+size = Vector2(268, 973)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyyhn"]
+size = Vector2(161, 146)
+
+[node name="falling rock" type="Node2D"]
+script = ExtResource("1_cyyhn")
+
+[node name="trigger area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger area"]
+position = Vector2(9, 388.5)
+shape = SubResource("RectangleShape2D_pjyd8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_oux33")
+region_enabled = true
+region_rect = Rect2(0, 163, 169, 194)
+
+[node name="killbox" type="Area2D" parent="."]
+position = Vector2(314, 3)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killbox"]
+position = Vector2(-308.5, -13)
+shape = SubResource("RectangleShape2D_cyyhn")
+
+[node name="self destruct" type="Timer" parent="."]
+
+[connection signal="body_entered" from="trigger area" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_entered" from="killbox" to="." method="_on_killbox_body_entered"]
+[connection signal="timeout" from="self destruct" to="." method="_on_self_destruct_timeout"]

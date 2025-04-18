@@ -255,8 +255,9 @@ height = 64.0
 radius = 18.0
 height = 64.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_r2d6d")
 move_speed = 250.0
 acceleration = 200.0

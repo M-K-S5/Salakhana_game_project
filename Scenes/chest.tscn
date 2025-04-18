@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8unr3gxmr7q"]
+
+[ext_resource type="Script" uid="uid://pkifc4yylt6u" path="res://Scripts/chest.gd" id="1_cjfl1"]
+[ext_resource type="Texture2D" uid="uid://dgrn6p158hy8w" path="res://Assets/map assets/PixelFantasy_Caves_1.0/mainlev_build.png" id="2_bagqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmguq"]
+size = Vector2(48, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq33m"]
+size = Vector2(49, 11)
+
+[node name="chest" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_cjfl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_bagqn")
+region_enabled = true
+region_rect = Rect2(744, 88, 64, 65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_pmguq")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="trigger area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger area"]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_dq33m")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="trigger area" to="." method="_on_trigger_area_body_entered"]
